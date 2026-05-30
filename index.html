@@ -1,0 +1,475 @@
+<!doctype html>
+<html lang="en" class="h-full">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sreejith C S — Flutter Developer</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
+  <script src="/_sdk/element_sdk.js"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap"
+    rel="stylesheet">
+
+
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="h-full">
+  <canvas id="bg-canvas"></canvas>
+  <div id="app-wrapper" class="relative z-10 w-full" style="height:100%; overflow-y:auto; overflow-x:hidden;">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 w-full z-50 px-6 md:px-12 py-5 flex items-center justify-between"
+      style="background:linear-gradient(180deg, rgba(0,0,0,0.8) 0%, transparent 100%); transition: background 0.4s ease;">
+      <div class="flex items-center gap-4">
+        <div
+          class="border border-white/20 w-10 h-10 flex items-center justify-center text-sm font-bold font-space transition-colors duration-300"
+          style="border-color: rgba(255,255,255,0.2);">
+          SC
+        </div><span class="text-xs tracking-widest opacity-60 hidden sm:block transition-all duration-300">SREEJITH C
+          S</span>
+      </div>
+      <div class="hidden md:flex items-center gap-8">
+        <div class="flex items-center gap-6 text-xs tracking-wider font-space">
+          <a href="#home" class="nav-link">01 / HOME</a> <a href="#about" class="nav-link">02 / ABOUT</a> <a
+            href="#experience" class="nav-link">03 / EXPERIENCE</a> <a href="#projects" class="nav-link">04 /
+            PROJECTS</a> <a href="#contact" class="nav-link">05 / CONTACT</a>
+        </div>
+        <button id="theme-btn" class="theme-toggle" title="Toggle theme">
+          <div class="theme-toggle-circle">
+            <i data-lucide="sun" class="theme-toggle-icon" style="width: 12px; height: 12px;"></i>
+          </div>
+        </button>
+      </div>
+    </nav><!-- Social Left -->
+    <div class="fixed left-6 top-1/2 -translate-y-1/2 z-40 hidden lg:flex flex-col gap-6 items-center">
+      <a href="https://github.com" target="_blank" rel="noopener noreferrer"
+        class="opacity-40 hover:opacity-100 transition-opacity"><i data-lucide="github"
+          style="width:18px;height:18px;"></i></a> <a href="https://linkedin.com" target="_blank"
+        rel="noopener noreferrer" class="opacity-40 hover:opacity-100 transition-opacity"><i data-lucide="linkedin"
+          style="width:18px;height:18px;"></i></a> <a href="mailto:sreejith@example.com"
+        class="opacity-40 hover:opacity-100 transition-opacity"><i data-lucide="mail"
+          style="width:18px;height:18px;"></i></a>
+      <div class="w-px h-16 bg-white/20 mt-2"></div>
+    </div><!-- Scroll Indicator Right -->
+    <div class="fixed right-6 top-1/2 -translate-y-1/2 z-40 hidden lg:flex flex-col items-center gap-3">
+      <span class="text-[10px] tracking-widest opacity-40 rotate-90 mb-6">SCROLL</span>
+      <div class="w-px bg-white/60 scroll-line"></div>
+    </div><!-- Hero Section -->
+    <section id="home" class="min-h-screen flex flex-col items-center justify-center text-center px-6 relative pt-32"
+      style="min-height:100%;">
+      <p id="hero-subtitle" class="text-lg tracking-[0.4em] opacity-40 mb-16 fade-up font-space">I AM A</p>
+      <h1 class="hero-title fade-up delay-1">FLUTTER<br>
+        DEVELOPER</h1>
+      <div class="mt-8 text-sm tracking-widest opacity-50 font-space fade-up delay-2">
+        <span class="rotate-text"></span>
+      </div>
+      <p id="hero-desc" class="mt-8 max-w-lg text-sm leading-relaxed opacity-50 fade-up delay-3">Flutter Developer with
+        1 year of experience building responsive, scalable mobile and web applications using Flutter, GetX, GraphQL, and
+        Clean Architecture.</p><a href="#projects"
+        class="glow-btn mt-12 px-10 py-4 border border-white/20 text-sm tracking-widest font-space fade-up delay-4">
+        EXPLORE MY WORK → </a>
+    </section><!-- About Section -->
+    <section id="about" class="py-32 px-6 md:px-20 max-w-5xl mx-auto w-full">
+      <h2 class="section-heading fade-up font-space">ABOUT ME</h2>
+      <div class="mt-12 glass rounded-2xl p-8 md:p-12 fade-up delay-1">
+        <!-- <p id="about-desc" class="text-base md:text-lg leading-relaxed opacity-70">Passionate Flutter Developer with experience building scalable cross-platform mobile and web applications using Flutter, GetX, GraphQL, and Clean Architecture. Focused on creating maintainable solutions, intuitive user experiences, and high-performance applications.</p> -->
+        <!-- <p id="about-desc" class="text-base md:text-lg leading-relaxed opacity-70">
+           -->
+        <div id="about-desc" class="text-base md:text-lg leading-relaxed opacity-70 space-y-6">
+          <p>I'm a <strong>Computer Science graduate</strong> from MES College of Engineering (2019-2023) who fell in
+            love
+            with Flutter during my final year. What started as a curiosity turned into a career building
+            production-grade
+            mobile applications.</p>
+          <p>Currently at <strong>Nexteons LLP</strong>, I'm developing a full-fledged ERP system that handles
+            inventory,
+            sales, purchases, and accounts. I've implemented features like <strong>bulk Excel imports with backend
+              validation</strong>, streamlined workflows with <strong>GetX</strong>, and integrated complex
+            <strong>GraphQL</strong> APIs—all while maintaining clean architecture principles.
+          </p>
+          <p>Before that, I collaborated with the team at <strong>Luminar TechnoHub</strong> to build essential
+            applications using custom clean architecture patterns and optimized API integrations. I'm a fast learner who
+            thrives in collaborative environments and always aims to write maintainable, scalable code.</p>
+          <p>When I'm not coding, you'll find me exploring new Flutter packages, contributing to open-source projects,
+            or
+            diving deep into state management patterns. I believe in <strong>building things that actually
+              work</strong>—no fluff, just solid engineering.</p>
+          </p>
+        </div>
+    </section>
+    <!-- Experience Section -->
+    <section id="experience" class="py-32 px-6 md:px-20 max-w-5xl mx-auto w-full">
+      <h2 class="section-heading fade-up font-space">EXPERIENCE</h2>
+      <!-- <div class="mt-16 relative pl-8 fade-up delay-1">
+        <div class="timeline-line"></div>
+        <div class="glass rounded-xl p-8 md:p-10 ml-4">
+          <div class="flex items-center gap-3 mb-2">
+            <div class="w-3 h-3 rounded-full bg-white/60"></div><span
+              class="text-xs tracking-widest opacity-40 font-space">1+ YEAR</span>
+          </div>
+          <h3 class="text-2xl font-bold font-space">Flutter Developer</h3>
+          <ul class="mt-6 space-y-3 text-sm opacity-60 leading-relaxed">
+            <li>• Cross-platform mobile development</li>
+            <li>• Responsive UI implementation</li>
+            <li>• GraphQL &amp; REST API integration</li>
+            <li>• State management using GetX</li>
+            <li>• Clean Architecture implementation</li>
+            <li>• Performance optimization</li>
+          </ul>
+        </div>
+      </div> -->
+
+       <div class="timeline">
+            <article class="timeline-item space-y-4">
+              <h3 data-template-id="experience-1-role" class="canva-text timeline-role"
+                style="color: rgb(255, 255, 255); font-weight: 500; font-style: normal; font-size: 34px;">Flutter
+                Developer @ Nexteons LLP</h3>
+                 <div data-template-id="experience-1-date" class="canva-text timeline-date"
+                style="color: rgb(141, 141, 141); font-weight: 400; font-style: oblique; font-size: 12px;">JUNE 2024 — OCT 2025
+              </div>
+              <!-- <div data-template-id="experience-1-company" class="canva-text timeline-company"
+                style="color: rgb(168, 168, 168); font-weight: 400; font-style: normal; font-size: 11px;">
+                Product Teams</div> -->
+              <p data-template-id="experience-1-copy" class="canva-text timeline-copy "
+                style="color: rgb(173, 173, 173); font-weight: 400; font-style: normal; font-size: 15px; line-height: 1.75;">
+                <!-- Developing responsive cross-platform applications with Flutter, architecting reusable UI systems,
+                integrating APIs, and shaping smooth product experiences across mobile and web. -->
+                <li>Developed and maintained a <strong>full-fledged ERP system</strong> using Flutter and GraphQL, encompassing core modules such as Inventory, Sales, Purchase, and Accounts.</li>
+                <li>Utilized <strong>GetX</strong> for efficient state management, routing, and dependency injection, ensuring clean architecture and high performance across web and mobile platforms.</li>
+                <li>Implemented dynamic functionalities including <strong>bulk Excel data import</strong> with robust backend validation, improving operational efficiency by 40%.</li>
+                <li>Integrated <strong>Hive</strong> for offline data persistence and <strong>GraphQL</strong> for optimized API calls, reducing data load times by 30%.</li>
+                <li>Collaborated with cross-functional teams to deliver scalable and maintainable code in a production-grade environment, participating in code reviews and sprint planning.</li>
+                <li>Successfully deployed the ERP system to <strong>App Store</strong> and <strong>Web</strong>, managing CI/CD pipelines and ensuring zero-downtime releases.</li>
+           
+              </p>
+            </article>
+            <article class="timeline-item space-y-4">
+              
+              <h3 data-template-id="experience-2-role" class="canva-text timeline-role"
+                style="color: rgb(255, 255, 255); font-weight: 500; font-style: normal; font-size: 34px;">Flutter Intern
+              </h3>
+              <div data-template-id="experience-2-date" class="canva-text timeline-date"
+                style="color: rgb(141, 141, 141); font-weight: 500; font-style: oblique; font-size: 12px;">JAN 2024 — MAY 2024
+              </div>
+              <!-- <div data-template-id="experience-2-company" class="canva-text timeline-company"
+                style="color: rgb(168, 168, 168); font-weight: 400; font-style: normal; font-size: 11px;">Software
+                Development</div> -->
+              <p data-template-id="experience-2-copy" class="canva-text timeline-copy"
+                style="color: rgb(173, 173, 173); font-weight: 400; font-style: normal; font-size: 15px; line-height: 1.75;">
+                <!-- Built production-ready screens, worked with state management and API integrations, and developed a
+                strong foundation in clean code, performance, and user-centered interface design.</p> -->
+                 <li>Collaborated with a dynamic Flutter development team in the creation and maintenance of essential applications for Luminar TechnoHub's internal operations.</li>
+                <li>Implemented a <strong>custom clean architecture pattern</strong> to separate business logic, presentation, and data layers, improving code maintainability and testability.</li>
+                <li>Optimized API call patterns and response handling, reducing app load time by 25% and enhancing overall responsiveness.</li>
+                <li>Used <strong>Provider</strong> for state management and integrated <strong>REST APIs</strong> with proper error handling and retry mechanisms.</li>
+                <li>Participated in daily standups, sprint retrospectives, and pair programming sessions to deliver features on tight deadlines.</li>
+          
+            </article>
+          </div>
+    </section>
+    <!-- <section id="experience" class="section">
+      <div class="section-grid">
+        <div data-template-id="experience-index" class="canva-text eyebrow"
+          style="color: rgb(155, 155, 155); font-weight: 400; font-style: normal; font-size: 11px;">03 // EXPERIENCE
+        </div>
+        <div>
+          <h2 data-template-id="experience-heading" class="canva-text section-title"
+            style="color: rgb(242, 242, 238); font-weight: 700; font-style: normal; font-size: 24px; letter-spacing: -0.07rem; line-height: 0.95;">
+            Experience shaped by building, learning and shipping.</h2> -->
+          <!-- <div class="timeline">
+            <article class="timeline-item">
+              <div data-template-id="experience-1-date" class="canva-text timeline-date"
+                style="color: rgb(141, 141, 141); font-weight: 400; font-style: normal; font-size: 11px;">2024 — PRESENT
+              </div>
+              <h3 data-template-id="experience-1-role" class="canva-text timeline-role"
+                style="color: rgb(255, 255, 255); font-weight: 500; font-style: normal; font-size: 34px;">Flutter
+                Developer</h3>
+              <div data-template-id="experience-1-company" class="canva-text timeline-company"
+                style="color: rgb(168, 168, 168); font-weight: 400; font-style: normal; font-size: 11px;">Independent /
+                Product Teams</div>
+              <p data-template-id="experience-1-copy" class="canva-text timeline-copy"
+                style="color: rgb(173, 173, 173); font-weight: 400; font-style: normal; font-size: 15px; line-height: 1.75;">
+                Developing responsive cross-platform applications with Flutter, architecting reusable UI systems,
+                integrating APIs, and shaping smooth product experiences across mobile and web.</p>
+            </article>
+            <article class="timeline-item">
+              <div data-template-id="experience-2-date" class="canva-text timeline-date"
+                style="color: rgb(141, 141, 141); font-weight: 400; font-style: normal; font-size: 11px;">2023 — 2024
+              </div>
+              <h3 data-template-id="experience-2-role" class="canva-text timeline-role"
+                style="color: rgb(255, 255, 255); font-weight: 500; font-style: normal; font-size: 34px;">Flutter Intern
+              </h3>
+              <div data-template-id="experience-2-company" class="canva-text timeline-company"
+                style="color: rgb(168, 168, 168); font-weight: 400; font-style: normal; font-size: 11px;">Software
+                Development</div>
+              <p data-template-id="experience-2-copy" class="canva-text timeline-copy"
+                style="color: rgb(173, 173, 173); font-weight: 400; font-style: normal; font-size: 15px; line-height: 1.75;">
+                Built production-ready screens, worked with state management and API integrations, and developed a
+                strong foundation in clean code, performance, and user-centered interface design.</p>
+            </article>
+          </div> -->
+        <!-- </div>
+      </div>
+    </section> -->
+    <!-- Tech Stack -->
+    <section class="py-32 px-6 md:px-20 max-w-5xl mx-auto w-full">
+      <h2 class="section-heading fade-up font-space">TECH STACK</h2>
+      <!-- <div class="mt-12 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 fade-up delay-1">
+        <div class="skill-card glass rounded-xl p-5 text-center text-sm font-space">
+          Flutter
+        </div>
+        <div class="skill-card glass rounded-xl p-5 text-center text-sm font-space">
+          Dart
+        </div>
+        <div class="skill-card glass rounded-xl p-5 text-center text-sm font-space">
+          GetX
+        </div>
+        <div class="skill-card glass rounded-xl p-5 text-center text-sm font-space">
+          GraphQL
+        </div>
+        <div class="skill-card glass rounded-xl p-5 text-center text-sm font-space">
+          Firebase
+        </div>
+        <div class="skill-card glass rounded-xl p-5 text-center text-sm font-space">
+          REST APIs
+        </div>
+        <div class="skill-card glass rounded-xl p-5 text-center text-sm font-space">
+          Clean Arch
+        </div>
+        <div class="skill-card glass rounded-xl p-5 text-center text-sm font-space">
+          Git
+        </div>
+        <div class="skill-card glass rounded-xl p-5 text-center text-sm font-space">
+          GitHub
+        </div>
+        <div class="skill-card glass rounded-xl p-5 text-center text-sm font-space">
+          Android
+        </div>
+        <div class="skill-card glass rounded-xl p-5 text-center text-sm font-space">
+          iOS
+        </div>
+        <div class="skill-card glass rounded-xl p-5 text-center text-sm font-space">
+          Responsive
+        </div>
+      </div> -->
+
+           <div class="section-grid">
+       <div class="skills-wrap">
+        <div data-template-id="skill-flutter" class="canva-card skill-card float-a" style="background: rgb(10, 10, 10); color: rgb(255, 255, 255); font-weight: 500; font-style: normal; font-size: 24px;">Flutter</div>
+        <div data-template-id="skill-dart" class="canva-card skill-card float-b" style="background: rgb(10, 10, 10); color: rgb(255, 255, 255); font-weight: 500; font-style: normal; font-size: 24px;">Dart</div>
+        <div data-template-id="skill-getx" class="canva-card skill-card float-a" style="background: rgb(10, 10, 10); color: rgb(255, 255, 255); font-weight: 500; font-style: normal; font-size: 24px;">GetX</div>
+        <div data-template-id="skill-graphql" class="canva-card skill-card float-b" style="background: rgb(10, 10, 10); color: rgb(255, 255, 255); font-weight: 500; font-style: normal; font-size: 24px;">GraphQL</div>
+        <div data-template-id="skill-firebase" class="canva-card skill-card float-b" style="background: rgb(10, 10, 10); color: rgb(255, 255, 255); font-weight: 500; font-style: normal; font-size: 24px;">Firebase</div>
+        <div data-template-id="skill-rest" class="canva-card skill-card float-a" style="background: rgb(10, 10, 10); color: rgb(255, 255, 255); font-weight: 500; font-style: normal; font-size: 24px;">REST APIs</div>
+        <div data-template-id="skill-git" class="canva-card skill-card float-b" style="background: rgb(10, 10, 10); color: rgb(255, 255, 255); font-weight: 500; font-style: normal; font-size: 24px;">Git</div>
+        <div data-template-id="skill-clean" class="canva-card skill-card float-a" style="background: rgb(10, 10, 10); color: rgb(255, 255, 255); font-weight: 500; font-style: normal; font-size: 24px;">Clean Architecture</div>
+       </div>
+     </div>
+    </section>
+
+    </section>
+    <!-- Projects Section -->
+    <section id="projects" class="py-32 px-6 md:px-20 max-w-5xl mx-auto w-full">
+      <h2 class="section-heading fade-up font-space">FEATURED PROJECTS</h2>
+      <div class="mt-16 space-y-20 fade-up delay-1"><!-- Project 1 -->
+        <div class="group">
+          <div class="glass rounded-3xl overflow-hidden transition-all duration-700 hover:border-white/20">
+            <div
+              class="relative h-80 md:h-96 bg-gradient-to-br from-white/5 to-white/0 overflow-hidden group-hover:scale-105 transition-transform duration-700">
+              <svg class="w-full h-full" viewbox="0 0 1200 600" preserveaspectratio="xMidYMid slice">
+                <defs>
+                  <lineargradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color:rgba(255,255,255,0.1);stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:rgba(255,255,255,0.02);stop-opacity:1" />
+                  </lineargradient>
+                </defs>
+                <rect width="1200" height="600" fill="url(#grad1)" />
+                <circle cx="300" cy="150" r="80" fill="rgba(255,255,255,0.05)" />
+                <circle cx="900" cy="450" r="120" fill="rgba(255,255,255,0.03)" />
+                <path d="M100 300 Q300 200 600 300 T1100 300" stroke="rgba(255,255,255,0.1)" stroke-width="2"
+                  fill="none" />
+                <g opacity="0.1">
+                  <rect x="200" y="100" width="200" height="200" fill="none" stroke="rgba(255,255,255,0.2)"
+                    stroke-width="1" />
+                  <rect x="800" y="300" width="250" height="200" fill="none" stroke="rgba(255,255,255,0.2)"
+                    stroke-width="1" />
+                </g>
+              </svg>
+              <div class="absolute inset-0 flex items-center justify-center">
+                <div class="text-center"><i data-lucide="shopping-cart"
+                    style="width:64px;height:64px;opacity:0.2;margin:0 auto;"></i>
+                </div>
+              </div>
+            </div>
+            <div class="p-8 md:p-12">
+              <div class="flex items-center justify-between mb-4"><span
+                  class="text-sm tracking-widest opacity-30 font-space">01 / PROJECT</span> <i
+                  data-lucide="arrow-up-right" style="width:20px;height:20px;opacity:0.4;"></i>
+              </div>
+              <h3 class="text-3xl md:text-4xl font-bold font-space mb-4">E-Commerce App</h3>
+              <p class="opacity-50 text-sm leading-relaxed mb-6 max-w-2xl">Full-featured cross-platform shopping
+                application with real-time inventory management, secure checkout flow, and highly responsive UI built
+                with Flutter and Clean Architecture. Optimized for performance with GraphQL subscriptions.</p>
+              <div class="flex flex-wrap gap-2 mb-8"><span
+                  class="text-xs tracking-wider px-4 py-2 border border-white/15 rounded-full opacity-60 hover:opacity-100 transition-opacity">Flutter</span>
+                <span
+                  class="text-xs tracking-wider px-4 py-2 border border-white/15 rounded-full opacity-60 hover:opacity-100 transition-opacity">GetX</span>
+                <span
+                  class="text-xs tracking-wider px-4 py-2 border border-white/15 rounded-full opacity-60 hover:opacity-100 transition-opacity">GraphQL</span>
+                <span
+                  class="text-xs tracking-wider px-4 py-2 border border-white/15 rounded-full opacity-60 hover:opacity-100 transition-opacity">Firebase</span>
+                <span
+                  class="text-xs tracking-wider px-4 py-2 border border-white/15 rounded-full opacity-60 hover:opacity-100 transition-opacity">Clean
+                  Architecture</span>
+              </div>
+              <div class="flex gap-6"><a href="https://github.com" target="_blank" rel="noopener noreferrer"
+                  class="glow-btn text-xs tracking-wider opacity-50 hover:opacity-100 transition-opacity font-space inline-flex items-center gap-2">
+                  <i data-lucide="github" style="width:16px;height:16px;"></i> GitHub </a> <a href="#"
+                  class="glow-btn text-xs tracking-wider opacity-50 hover:opacity-100 transition-opacity font-space inline-flex items-center gap-2">
+                  <i data-lucide="external-link" style="width:16px;height:16px;"></i> Live Demo </a>
+              </div>
+            </div>
+          </div>
+        </div><!-- Project 2 -->
+        <div class="group">
+          <div class="glass rounded-3xl overflow-hidden transition-all duration-700 hover:border-white/20">
+            <div
+              class="relative h-80 md:h-96 bg-gradient-to-br from-white/5 to-white/0 overflow-hidden group-hover:scale-105 transition-transform duration-700">
+              <svg class="w-full h-full" viewbox="0 0 1200 600" preserveaspectratio="xMidYMid slice">
+                <defs>
+                  <lineargradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color:rgba(255,255,255,0.1);stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:rgba(255,255,255,0.02);stop-opacity:1" />
+                  </lineargradient>
+                </defs>
+                <rect width="1200" height="600" fill="url(#grad2)" />
+                <circle cx="400" cy="200" r="100" fill="rgba(255,255,255,0.04)" />
+                <circle cx="800" cy="350" r="90" fill="rgba(255,255,255,0.05)" />
+                <path d="M50 400 L200 300 L450 350 L650 250 L900 400 L1150 300" stroke="rgba(255,255,255,0.1)"
+                  stroke-width="2" fill="none" />
+                <g opacity="0.08">
+                  <line x1="100" y1="100" x2="1100" y2="500" stroke="rgba(255,255,255,0.1)" stroke-width="1" />
+                  <line x1="1100" y1="100" x2="100" y2="500" stroke="rgba(255,255,255,0.1)" stroke-width="1" />
+                </g>
+              </svg>
+              <div class="absolute inset-0 flex items-center justify-center">
+                <div class="text-center"><i data-lucide="check-square"
+                    style="width:64px;height:64px;opacity:0.2;margin:0 auto;"></i>
+                </div>
+              </div>
+            </div>
+            <div class="p-8 md:p-12">
+              <div class="flex items-center justify-between mb-4"><span
+                  class="text-sm tracking-widest opacity-30 font-space">02 / PROJECT</span> <i
+                  data-lucide="arrow-up-right" style="width:20px;height:20px;opacity:0.4;"></i>
+              </div>
+              <h3 class="text-3xl md:text-4xl font-bold font-space mb-4">Task Management</h3>
+              <p class="opacity-50 text-sm leading-relaxed mb-6 max-w-2xl">Productivity application featuring real-time
+                synchronization, offline-first architecture, and intuitive gesture-based interactions for seamless task
+                organization. Built with advanced state management and beautiful micro-interactions.</p>
+              <div class="flex flex-wrap gap-2 mb-8"><span
+                  class="text-xs tracking-wider px-4 py-2 border border-white/15 rounded-full opacity-60 hover:opacity-100 transition-opacity">Flutter</span>
+                <span
+                  class="text-xs tracking-wider px-4 py-2 border border-white/15 rounded-full opacity-60 hover:opacity-100 transition-opacity">Dart</span>
+                <span
+                  class="text-xs tracking-wider px-4 py-2 border border-white/15 rounded-full opacity-60 hover:opacity-100 transition-opacity">REST
+                  API</span> <span
+                  class="text-xs tracking-wider px-4 py-2 border border-white/15 rounded-full opacity-60 hover:opacity-100 transition-opacity">Hive
+                  DB</span> <span
+                  class="text-xs tracking-wider px-4 py-2 border border-white/15 rounded-full opacity-60 hover:opacity-100 transition-opacity">Provider</span>
+              </div>
+              <div class="flex gap-6"><a href="https://github.com" target="_blank" rel="noopener noreferrer"
+                  class="glow-btn text-xs tracking-wider opacity-50 hover:opacity-100 transition-opacity font-space inline-flex items-center gap-2">
+                  <i data-lucide="github" style="width:16px;height:16px;"></i> GitHub </a> <a href="#"
+                  class="glow-btn text-xs tracking-wider opacity-50 hover:opacity-100 transition-opacity font-space inline-flex items-center gap-2">
+                  <i data-lucide="external-link" style="width:16px;height:16px;"></i> Live Demo </a>
+              </div>
+            </div>
+          </div>
+        </div><!-- Project 3 -->
+        <div class="group">
+          <div class="glass rounded-3xl overflow-hidden transition-all duration-700 hover:border-white/20">
+            <div
+              class="relative h-80 md:h-96 bg-gradient-to-br from-white/5 to-white/0 overflow-hidden group-hover:scale-105 transition-transform duration-700">
+              <svg class="w-full h-full" viewbox="0 0 1200 600" preserveaspectratio="xMidYMid slice">
+                <defs>
+                  <lineargradient id="grad3" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color:rgba(255,255,255,0.1);stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:rgba(255,255,255,0.02);stop-opacity:1" />
+                  </lineargradient>
+                </defs>
+                <rect width="1200" height="600" fill="url(#grad3)" />
+                <circle cx="250" cy="100" r="70" fill="rgba(255,255,255,0.05)" />
+                <circle cx="950" cy="500" r="110" fill="rgba(255,255,255,0.03)" />
+                <polygon points="600,150 800,300 600,450 400,300" fill="none" stroke="rgba(255,255,255,0.08)"
+                  stroke-width="2" />
+                <g opacity="0.06">
+                  <circle cx="300" cy="300" r="150" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1" />
+                  <circle cx="900" cy="300" r="150" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1" />
+                </g>
+              </svg>
+              <div class="absolute inset-0 flex items-center justify-center">
+                <div class="text-center"><i data-lucide="users"
+                    style="width:64px;height:64px;opacity:0.2;margin:0 auto;"></i>
+                </div>
+              </div>
+            </div>
+            <div class="p-8 md:p-12">
+              <div class="flex items-center justify-between mb-4"><span
+                  class="text-sm tracking-widest opacity-30 font-space">03 / PROJECT</span> <i
+                  data-lucide="arrow-up-right" style="width:20px;height:20px;opacity:0.4;"></i>
+              </div>
+              <h3 class="text-3xl md:text-4xl font-bold font-space mb-4">Social Community</h3>
+              <p class="opacity-50 text-sm leading-relaxed mb-6 max-w-2xl">Feature-rich social application with
+                real-time messaging, user authentication, feed algorithms, and community building tools. Demonstrates
+                advanced architecture patterns and smooth performance optimization across platforms.</p>
+              <div class="flex flex-wrap gap-2 mb-8"><span
+                  class="text-xs tracking-wider px-4 py-2 border border-white/15 rounded-full opacity-60 hover:opacity-100 transition-opacity">Flutter</span>
+                <span
+                  class="text-xs tracking-wider px-4 py-2 border border-white/15 rounded-full opacity-60 hover:opacity-100 transition-opacity">Firebase</span>
+                <span
+                  class="text-xs tracking-wider px-4 py-2 border border-white/15 rounded-full opacity-60 hover:opacity-100 transition-opacity">GraphQL</span>
+                <span
+                  class="text-xs tracking-wider px-4 py-2 border border-white/15 rounded-full opacity-60 hover:opacity-100 transition-opacity">Real-time
+                  Sync</span> <span
+                  class="text-xs tracking-wider px-4 py-2 border border-white/15 rounded-full opacity-60 hover:opacity-100 transition-opacity">WebSocket</span>
+              </div>
+              <div class="flex gap-6"><a href="https://github.com" target="_blank" rel="noopener noreferrer"
+                  class="glow-btn text-xs tracking-wider opacity-50 hover:opacity-100 transition-opacity font-space inline-flex items-center gap-2">
+                  <i data-lucide="github" style="width:16px;height:16px;"></i> GitHub </a> <a href="#"
+                  class="glow-btn text-xs tracking-wider opacity-50 hover:opacity-100 transition-opacity font-space inline-flex items-center gap-2">
+                  <i data-lucide="external-link" style="width:16px;height:16px;"></i> Live Demo </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="contact" class="py-32 px-6 md:px-20 max-w-5xl mx-auto w-full text-center">
+      <h2 id="contact-heading" class="section-heading fade-up font-space">LET'S BUILD<br>
+        SOMETHING AMAZING</h2>
+      <p class="mt-8 opacity-50 text-sm max-w-md mx-auto fade-up delay-1">Available for Flutter Development
+        opportunities, freelance projects, and collaborations.</p>
+      <div class="mt-12 flex justify-center gap-8 fade-up delay-2">
+        <a href="mailto:sreejith@example.com"
+          class="glow-btn glass px-6 py-3 rounded-lg text-xs tracking-wider font-space">EMAIL</a> <a
+          href="https://linkedin.com" target="_blank" rel="noopener noreferrer"
+          class="glow-btn glass px-6 py-3 rounded-lg text-xs tracking-wider font-space">LINKEDIN</a> <a
+          href="https://github.com" target="_blank" rel="noopener noreferrer"
+          class="glow-btn glass px-6 py-3 rounded-lg text-xs tracking-wider font-space">GITHUB</a>
+      </div>
+    </section><!-- Footer -->
+    <footer class="py-16 px-6 text-center border-t border-white/5">
+      <p class="text-sm font-bold font-space tracking-wider">SREEJITH C S</p>
+      <p class="text-xs opacity-30 mt-2 tracking-widest">FLUTTER DEVELOPER</p>
+      <p class="text-xs opacity-20 mt-6">© 2026</p>
+    </footer>
+  </div>
+  <script src="js/script.js"></script>
+  <script>(function () { function c() { var b = a.contentDocument || a.contentWindow.document; if (b) { var d = b.createElement('script'); d.innerHTML = "window.__CF$cv$params={r:'a03e864aaa84ff7b',t:'MTc4MDE1MjM0Nw=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);"; b.getElementsByTagName('head')[0].appendChild(d) } } if (document.body) { var a = document.createElement('iframe'); a.height = 1; a.width = 1; a.style.position = 'absolute'; a.style.top = 0; a.style.left = 0; a.style.border = 'none'; a.style.visibility = 'hidden'; document.body.appendChild(a); if ('loading' !== document.readyState) c(); else if (window.addEventListener) document.addEventListener('DOMContentLoaded', c); else { var e = document.onreadystatechange || function () { }; document.onreadystatechange = function (b) { e(b); 'loading' !== document.readyState && (document.onreadystatechange = e, c()) } } } })();</script>
+</body>
+
+</html>
