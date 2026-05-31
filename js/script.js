@@ -315,7 +315,8 @@
         const txt = config.contact_heading || defaultConfig.contact_heading;
         ch.innerHTML = txt.replace(/\s+/g, ' ').replace(/(SOMETHING)/, '<br>$1');
 
-        const bg = config.background_color || defaultConfig.background_color;
+        // const bg = config.background_color || defaultConfig.background_color;
+        const bg =  '#000000';;
         const txt_c = config.text_color || defaultConfig.text_color;
         document.body.style.background = bg;
         document.body.style.color = txt_c;
