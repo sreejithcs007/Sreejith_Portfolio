@@ -764,3 +764,68 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+
+// projects.js
+let currentIndex = 0;
+
+const cards = document.querySelectorAll(".carousel-card");
+const totalCards = cards.length;
+
+const prevBtn = document.getElementById("carousel-prev");
+const nextBtn = document.getElementById("carousel-next");
+const carouselContainer = document.querySelector(".carousel-container");
+
+function updateCarousel() {
+  cards.forEach((card, i) => {
+    let offset = (i - currentIndex + totalCards) % totalCards;
+
+    if (offset > totalCards / 2) {
+      offset -= totalCards;
+    }
+
+    card.classList.remove("is-active");
+
+    card.style.transform = `
+      translateX(${offset * 240}px)
+      scale(${offset === 0 ? 1 : 0.85})
+      rotateY(${offset * -12}deg)
+    `;
+
+    card.style.opacity = offset === 0 ? 1 : 0.6;
+    card.style.zIndex = offset === 0 ? 3 : 1;
+
+    if (offset === 0) {
+      card.classList.add("is-active");
+    }
+  });
+}
+
+function nextCard() {
+  currentIndex = (currentIndex + 1) % totalCards;
+  updateCarousel();
+}
+
+function prevCard() {
+  currentIndex = (currentIndex - 1 + totalCards) % totalCards;
+  updateCarousel();
+}
+
+nextBtn.addEventListener("click", nextCard);
+prevBtn.addEventListener("click", prevCard);
+
+let autoSlide = setInterval(nextCard, 4000);
+
+carouselContainer.addEventListener("mouseenter", () => {
+  clearInterval(autoSlide);
+});
+
+carouselContainer.addEventListener("mouseleave", () => {
+  autoSlide = setInterval(nextCard, 4000);
+});
+
+document.addEventListener("keydown", (e) => {
+  if (e.key === "ArrowRight") nextCard();
+  if (e.key === "ArrowLeft") prevCard();
+});
+
+updateCarousel();

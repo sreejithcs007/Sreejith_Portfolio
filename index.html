@@ -136,7 +136,7 @@
             style="color: rgb(141, 141, 141); font-weight: 500; font-style: oblique; font-size: 12px;">JAN 2024 — MAY
             2024
           </div>
-          
+
           <p data-template-id="experience-2-copy" class="canva-text timeline-copy"
             style="color: rgb(173, 173, 173); font-weight: 400; font-style: normal; font-size: 15px; line-height: 1.75;">
 
@@ -154,7 +154,7 @@
         </article>
       </div>
     </section>
-  
+
     <!-- Tech Stack -->
     <section class="py-32 px-6 md:px-20 max-w-5xl mx-auto w-full">
       <h2 class="section-heading fade-up font-space">TECH STACK</h2>
@@ -217,270 +217,151 @@
     <section id="projects" class="py-32 px-6 md:px-20 max-w-5xl mx-auto w-full">
       <h2 class="section-heading fade-up font-space">FEATURED PROJECTS</h2>
       <div class="mt-16 space-y-20 fade-up delay-1">
-        <!-- Project 1 -->
-        <div class="group">
-          <div class="glass rounded-3xl overflow-hidden transition-all duration-700 hover:border-white/20">
-            <div
-              class="relative h-80 md:h-96 bg-gradient-to-br from-white/5 to-white/0 overflow-hidden group-hover:scale-105 transition-transform duration-700">
-              <svg class="w-full h-full" viewbox="0 0 1200 600" preserveaspectratio="xMidYMid slice">
-                <defs>
-                  <lineargradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" style="stop-color:rgba(255,255,255,0.1);stop-opacity:1" />
-                    <stop offset="100%" style="stop-color:rgba(255,255,255,0.02);stop-opacity:1" />
-                  </lineargradient>
-                </defs>
-                <rect width="1200" height="600" fill="url(#grad1)" />
-                <circle cx="300" cy="150" r="80" fill="rgba(255,255,255,0.05)" />
-                <circle cx="900" cy="450" r="120" fill="rgba(255,255,255,0.03)" />
-                <path d="M100 300 Q300 200 600 300 T1100 300" stroke="rgba(255,255,255,0.1)" stroke-width="2"
-                  fill="none" />
-                <g opacity="0.1">
-                  <rect x="200" y="100" width="200" height="200" fill="none" stroke="rgba(255,255,255,0.2)"
-                    stroke-width="1" />
-                  <rect x="800" y="300" width="250" height="200" fill="none" stroke="rgba(255,255,255,0.2)"
-                    stroke-width="1" />
-                </g>
-              </svg>
-              <div class="absolute inset-0 flex items-center justify-center">
-                <div class="text-center">
-                  
-                  <div class="project-image-container">
-                    <!-- src="assets/images/eonserp.png " -->
-                    <img src="assets/images/1p.png " alt="EONS ERP" class="project-image ">
+
+
+        <!-- projects.html -->
+        <section id="projects">
+          <div class="carousel-wrapper">
+            <div class="carousel-container">
+
+              <!-- Project 1 -->
+              <article class="carousel-card" data-index="0">
+                <div class="carousel-card-inner">
+                  <div class="carousel-card-media">
+                    <img src="assets/images/erp.jpg" alt="EONS ERP">
+                  </div>
+
+                  <div class="carousel-card-content">
+                    <div>
+                      <div class="carousel-card-kicker">
+                        01 / ERP SYSTEM
+                      </div>
+
+                      <h3 class="carousel-card-title">
+                        EONS ERP
+                      </h3>
+
+                      <p class="carousel-card-copy">
+                        A comprehensive ERP solution built with Flutter for both web and mobile platforms. Manages
+                        inventory, sales, purchases, and accounts with real-time synchronization and offline support.
+                      </p>
+                    </div>
+
+                    <div>
+                      <div class="carousel-card-stack">
+                        Flutter / GetX / GraphQL / Firebase / Hive / Excel Integration
+                      </div>
+
+                      <div class="carousel-card-actions">
+                        <a href="https://eons-erp.com" class="carousel-btn" target="_blank" rel="noopener noreferrer">
+                          Live Demo
+                        </a>
+                        <a href="#" class="carousel-btn">
+                          Play Store
+                        </a>
+                        <a href="#" class="carousel-btn">
+                          Apple Store
+                        </a>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
+              </article>
 
+              <!-- Project 2 -->
+              <article class="carousel-card" data-index="1">
+                <div class="carousel-card-inner">
+                  <div class="carousel-card-media">
+                    <img src="assets/images/bus-tracking.jpg" alt="Bus Tracking">
+                  </div>
 
-            <div class="p-8 md:p-12">
-              <div class="flex items-center justify-between mb-4"><span
-                  class="text-sm tracking-widest opacity-30 font-space">01 / PROJECT</span> <i
-                  data-lucide="arrow-up-right" style="width:20px;height:20px;opacity:0;"></i>
-              </div>
-              <h3 class="text-3xl md:text-4xl font-bold font-space mb-4">EONS ERP</h3>
-              <h4 class="text-lg md:text-xl font-medium text-white/70 mb-6">
-                Cross-platform Enterprise Resource Planning System
-              </h4>
-              <p class="opacity-50 text-sm leading-relaxed mb-6 max-w-2xl">A comprehensive ERP solution built with
-                Flutter for both web and mobile platforms. Manages inventory, sales, purchases, and accounts with
-                real-time synchronization and offline support.</p>
-              <p class="mb-6">
-                Multi-module ERP system with Inventory, Sales, Purchase, and Accounts,
-                Cross-platform support (Web, Android, iOS) with single codebase,
-                Bulk Excel import/export with backend validation and error handling,
-                Real-time data sync using GraphQL subscriptions,
-                Offline-first architecture with Hive local database,
-                Role-based access control and user management,
-                Advanced filtering, sorting, and search across all modules,
-                Responsive UI adapting to mobile, tablet, and desktop screens.
-              </p>
+                  <div class="carousel-card-content">
+                    <div>
+                      <div class="carousel-card-kicker">
+                        02 / TRACKING SYSTEM
+                      </div>
 
-              <div class="flex flex-wrap gap-2 mb-8"><span
-                  class="text-xs tracking-wider px-4 py-2 border border-white/15 rounded-full opacity-60 hover:opacity-100 transition-opacity">Flutter</span>
-                <span
-                  class="text-xs tracking-wider px-4 py-2 border border-white/15 rounded-full opacity-60 hover:opacity-100 transition-opacity">Dart</span>
-                <span
-                  class="text-xs tracking-wider px-4 py-2 border border-white/15 rounded-full opacity-60 hover:opacity-100 transition-opacity">GetX</span>
-                <span
-                  class="text-xs tracking-wider px-4 py-2 border border-white/15 rounded-full opacity-60 hover:opacity-100 transition-opacity">GraphQL</span>
-                <span
-                  class="text-xs tracking-wider px-4 py-2 border border-white/15 rounded-full opacity-60 hover:opacity-100 transition-opacity">Hive</span>
-                <span
-                  class="text-xs tracking-wider px-4 py-2 border border-white/15 rounded-full opacity-60 hover:opacity-100 transition-opacity">Excel
-                  Integration</span>
-              </div>
+                      <h3 class="carousel-card-title">
+                        Bus Tracking App
+                      </h3>
 
+                      <p class="carousel-card-copy">
+                        A Flutter-based mobile application for tracking buses in real-time. Features live location
+                        updates, route management, and notifications for parents and school administrators.
+                      </p>
+                    </div>
 
-              <div class="flex gap-6">
+                    <div>
+                      <div class="carousel-card-stack">
+                        Flutter / Python / Provider / REST API
+                      </div>
 
-                <!-- Play Store -->
-                <a href="https://play.google.com/store" target="_blank" rel="noopener noreferrer"
-                  class="glow-btn text-xs tracking-wider opacity-50 hover:opacity-100 transition-opacity font-space inline-flex items-center gap-2">
-                  <i data-lucide="smartphone" style="width:16px;height:16px;"></i>
-                  Play Store
-                </a>
-
-                <!-- App Store -->
-                <a href="https://apps.apple.com" target="_blank" rel="noopener noreferrer"
-                  class="glow-btn text-xs tracking-wider opacity-50 hover:opacity-100 transition-opacity font-space inline-flex items-center gap-2">
-                  <i data-lucide="apple" style="width:16px;height:16px;"></i>
-                  App Store
-                </a>
-
-                <!-- Live Demo -->
-                <a href="https://demo.yourdomain.com" target="_blank" rel="noopener noreferrer"
-                  class="glow-btn text-xs tracking-wider opacity-50 hover:opacity-100 transition-opacity font-space inline-flex items-center gap-2">
-                  <i data-lucide="external-link" style="width:16px;height:16px;"></i>
-                  Live Demo
-                </a>
-
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        
-        <!-- Project 2 -->
-        <div class="group">
-          <div class="glass rounded-3xl overflow-hidden transition-all duration-700 hover:border-white/20">
-            <div
-              class="relative h-80 md:h-96 bg-gradient-to-br from-white/5 to-white/0 overflow-hidden group-hover:scale-105 transition-transform duration-700">
-              <svg class="w-full h-full" viewbox="0 0 1200 600" preserveaspectratio="xMidYMid slice">
-                <defs>
-                  <lineargradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" style="stop-color:rgba(255,255,255,0.1);stop-opacity:1" />
-                    <stop offset="100%" style="stop-color:rgba(255,255,255,0.02);stop-opacity:1" />
-                  </lineargradient>
-                </defs>
-                <rect width="1200" height="600" fill="url(#grad2)" />
-                <circle cx="400" cy="200" r="100" fill="rgba(255,255,255,0.04)" />
-                <circle cx="800" cy="350" r="90" fill="rgba(255,255,255,0.05)" />
-                <path d="M50 400 L200 300 L450 350 L650 250 L900 400 L1150 300" stroke="rgba(255,255,255,0.1)"
-                  stroke-width="2" fill="none" />
-                <g opacity="0.08">
-                  <line x1="100" y1="100" x2="1100" y2="500" stroke="rgba(255,255,255,0.1)" stroke-width="1" />
-                  <line x1="1100" y1="100" x2="100" y2="500" stroke="rgba(255,255,255,0.1)" stroke-width="1" />
-                </g>
-              </svg>
-              <div class="absolute inset-0 flex items-center justify-center">
-                <div class="text-center">
-                  <!-- <i data-lucide="shopping-cart"
-                    style="width:64px;height:64px;opacity:0.2;margin:0 auto;"></i> -->
-                  <div class="project-image-container">
-                    <!-- src="assets/images/eonserp.png " -->
-                    <img src="assets/images/bus-tracking.jpg " alt="BUS TRACKING" class="project-image ">
+                      <div class="carousel-card-actions">
+                        <a href="https://github.com/shihabksaleem/bus_tracking_application.git" class="carousel-btn"
+                          target="_blank" rel="noopener noreferrer">
+                          GitHub
+                        </a>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
-            <div class="p-8 md:p-12">
-              <div class="flex items-center justify-between mb-4"><span
-                  class="text-sm tracking-widest opacity-30 font-space">02 / PROJECT</span> <i
-                  data-lucide="arrow-up-right" style="width:20px;height:20px;opacity:0;"></i>
-              </div>
-              <h3 class="text-3xl md:text-4xl font-bold font-space mb-4">Bus Tracking App</h3>
-              <p class="opacity-50 text-sm leading-relaxed mb-6 max-w-2xl">Real-time Location Tracking for Educational
-                Institutions</p>
-              <p class="opacity-50 text-sm leading-relaxed mb-6 max-w-2xl">A Flutter-based mobile application for
-                tracking buses in real-time. Features live location updates, route management, and notifications for
-                parents and school administrators.</p>
-              <p class="mb-6">
-                Real-time GPS tracking with Google Maps integration.
-                Live location updates every 10 seconds.
-                Route optimization and estimated arrival times.
-                Push notifications for bus arrivals and delays.
-                Parent and admin dashboards with different views.
-                Attendance marking with geofencing.
-                Historical route playback and analytics.
-              </p>
+              </article>
 
+              <!-- Project 3 -->
+              <article class="carousel-card" data-index="2">
+                <div class="carousel-card-inner">
+                  <div class="carousel-card-media">
+                    <img src="assets/images/audio-recorder.jpg" alt="Audio Recorder">
+                  </div>
 
-              <div class="flex flex-wrap gap-2 mb-8"><span
-                  class="text-xs tracking-wider px-4 py-2 border border-white/15 rounded-full opacity-60 hover:opacity-100 transition-opacity">Flutter</span>
-                <span
-                  class="text-xs tracking-wider px-4 py-2 border border-white/15 rounded-full opacity-60 hover:opacity-100 transition-opacity">Dart</span>
-                <span
-                  class="text-xs tracking-wider px-4 py-2 border border-white/15 rounded-full opacity-60 hover:opacity-100 transition-opacity">Python
-                  (Backend)
-                  API</span> <span
-                  class="text-xs tracking-wider px-4 py-2 border border-white/15 rounded-full opacity-60 hover:opacity-100 transition-opacity">Provider</span>
-                <spani
-                  class="text-xs tracking-wider px-4 py-2 border border-white/15 rounded-full opacity-60 hover:opacity-100 transition-opacity">
-                  REST API</span>
-              </div>
+                  <div class="carousel-card-content">
+                    <div>
+                      <div class="carousel-card-kicker">
+                        03 / MOBILE APP
+                      </div>
 
-              <div class="flex gap-6">
+                      <h3 class="carousel-card-title">
+                        Audio Recorder
+                      </h3>
 
+                      <p class="carousel-card-copy">
+                        A clean, minimal audio recording application with Hive-based local storage. Features
+                        high-quality audio capture, playback controls, and organized recording management.
+                      </p>
+                    </div>
 
+                    <div>
+                      <div class="carousel-card-stack">
+                        Flutter / Dart / Provider / Hive / Audio Plugins
+                      </div>
 
-                <!-- Github -->
-                <a href="https://github.com/shihabksaleem/bus_tracking_application.git" target="_blank"
-                  rel="noopener noreferrer"
-                  class="glow-btn text-xs tracking-wider opacity-50 hover:opacity-100 transition-opacity font-space inline-flex items-center gap-2">
-                  <i data-lucide="github" style="width:16px;height:16px;"></i>
-                  github
-                </a>
-
-              </div>
-            </div>
-          </div>
-        </div><!-- Project 3 -->
-        <div class="group">
-          <div class="glass rounded-3xl overflow-hidden transition-all duration-700 hover:border-white/20">
-            <div
-              class="relative h-80 md:h-96 bg-gradient-to-br from-white/5 to-white/0 overflow-hidden group-hover:scale-105 transition-transform duration-700">
-              <svg class="w-full h-full" viewbox="0 0 1200 600" preserveaspectratio="xMidYMid slice">
-                <defs>
-                  <lineargradient id="grad3" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" style="stop-color:rgba(255,255,255,0.1);stop-opacity:1" />
-                    <stop offset="100%" style="stop-color:rgba(255,255,255,0.02);stop-opacity:1" />
-                  </lineargradient>
-                </defs>
-                <rect width="1200" height="600" fill="url(#grad3)" />
-                <circle cx="250" cy="100" r="70" fill="rgba(255,255,255,0.05)" />
-                <circle cx="950" cy="500" r="110" fill="rgba(255,255,255,0.03)" />
-                <polygon points="600,150 800,300 600,450 400,300" fill="none" stroke="rgba(255,255,255,0.08)"
-                  stroke-width="2" />
-                <g opacity="0.06">
-                  <circle cx="300" cy="300" r="150" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1" />
-                  <circle cx="900" cy="300" r="150" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1" />
-                </g>
-              </svg>
-              <div class="absolute inset-0 flex items-center justify-center">
-                <div class="text-center">
-
-                  <div class="project-image-container">
-
-                    <img src="assets/images/voicerecorder.jpg " alt="BUS TRACKING" class="project-image ">
+                      <div class="carousel-card-actions">
+                        <a href="https://github.com/sreejithcs007/audiorecorder" class="carousel-btn" target="_blank"
+                          rel="noopener noreferrer">
+                          GitHub
+                        </a>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </article>
+
             </div>
-            <div class="p-8 md:p-12">
-              <div class="flex items-center justify-between mb-4"><span
-                  class="text-sm tracking-widest opacity-30 font-space">03 / PROJECT</span> <i
-                  data-lucide="arrow-up-right" style="width:20px;height:20px;opacity:0;"></i>
-              </div>
-              <h3 class="text-3xl md:text-4xl font-bold font-space mb-4">Audio Recorder</h3>
-              <p class="opacity-50 text-sm leading-relaxed mb-6 max-w-2xl">High-Quality Voice & Music Recording App</p>
-              <p class="opacity-50 text-sm leading-relaxed mb-6 max-w-2xl">A clean, minimal audio recording application
-                with Hive-based local storage. Features high-quality audio capture, playback controls, and organized
-                recording management.</p>
-              <p class="mb-6">
-                High-quality audio recording with multiple formats (MP3, WAV),
-                Clean and intuitive UI for easy recording management,
-                Local storage using Hive for offline access,
-                Playback controls with waveform visualization,
-                Recording categorization and tagging,
-                Share recordings via social media and messaging apps,
-                Background recording support with notifications
-              </p>
 
+            <button class="carousel-nav carousel-nav-prev" id="carousel-prev" aria-label="Previous project">
 
+            </button>
 
-              <div class="flex flex-wrap gap-2 mb-8"><span
-                  class="text-xs tracking-wider px-4 py-2 border border-white/15 rounded-full opacity-60 hover:opacity-100 transition-opacity">Flutter</span>
-                <span
-                  class="text-xs tracking-wider px-4 py-2 border border-white/15 rounded-full opacity-60 hover:opacity-100 transition-opacity">Dart</span>
-                <span
-                  class="text-xs tracking-wider px-4 py-2 border border-white/15 rounded-full opacity-60 hover:opacity-100 transition-opacity">Provider</span>
-                <span
-                  class="text-xs tracking-wider px-4 py-2 border border-white/15 rounded-full opacity-60 hover:opacity-100 transition-opacity">Hive</span>
-                <span
-                  class="text-xs tracking-wider px-4 py-2 border border-white/15 rounded-full opacity-60 hover:opacity-100 transition-opacity">Audio
-                  Plugins</span>
-              </div>
-              <!-- Github -->
-              <a href="https://github.com/sreejithcs007/audiorecorder" target="_blank" rel="noopener noreferrer"
-                class="glow-btn text-xs tracking-wider opacity-50 hover:opacity-100 transition-opacity font-space inline-flex items-center gap-2">
-                <i data-lucide="github" style="width:16px;height:16px;"></i>
-                github
-              </a>
-            </div>
+            <button class="carousel-nav carousel-nav-next" id="carousel-next" aria-label="Next project">
+
+            </button>
           </div>
-        </div>
-      </div>
+        </section>
+
+
+
+
+
     </section>
     <section id="contact" class="py-32 px-6 md:px-20 max-w-5xl mx-auto w-full text-center">
       <h2 id="contact-heading" class="section-heading fade-up font-space">LET'S BUILD<br>
