@@ -1457,3 +1457,27 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const frame = document.querySelector('.about-photo-frame');
+
+  if (!frame) return;
+
+  frame.addEventListener('mousemove', (e) => {
+    const rect = frame.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    const rotateY = ((x / rect.width) - 0.5) * 10;
+    const rotateX = ((y / rect.height) - 0.5) * -10;
+
+    frame.style.transform = `perspective(1200px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
+  });
+
+  frame.addEventListener('mouseleave', () => {
+    frame.style.transform = 'perspective(1200px) rotateY(-6deg)';
+  });
+});
