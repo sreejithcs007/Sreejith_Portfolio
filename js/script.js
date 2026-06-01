@@ -1481,3 +1481,158 @@ document.addEventListener('DOMContentLoaded', () => {
     frame.style.transform = 'perspective(1200px) rotateY(-6deg)';
   });
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// document.addEventListener('DOMContentLoaded', () => {
+//   if (window.lucide && typeof window.lucide.createIcons === 'function') {
+//     window.lucide.createIcons();
+//   }
+// });
+
+// document.addEventListener('DOMContentLoaded', () => {
+//   if (window.lucide && typeof window.lucide.createIcons === 'function') {
+//     window.lucide.createIcons();
+//   }
+// });
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const cards = Array.from(document.querySelectorAll('.stack-card'));
+  if (!cards.length) return;
+
+  const items = cards.map((el, i) => ({
+    el,
+    i,
+    baseX: 0,
+    baseY: 0,
+    w: 0,
+    h: 0,
+    tx: 0,
+    ty: 0,
+    vx: 0,
+    vy: 0,
+    rot: 0,
+    vr: 0,
+    phase: Math.random() * Math.PI * 2
+  }));
+
+  function measure() {
+    items.forEach((item) => {
+      const r = item.el.getBoundingClientRect();
+      item.baseX = r.left + r.width / 2;
+      item.baseY = r.top + r.height / 2;
+      item.w = r.width;
+      item.h = r.height;
+    });
+  }
+
+  function clamp(value, min, max) {
+    return Math.max(min, Math.min(max, value));
+  }
+
+  function animate(t) {
+    const time = t * 0.001;
+
+    // gentle independent motion
+    items.forEach((item, index) => {
+      const speed = 0.45 + index * 0.05;
+
+      const targetX = Math.sin(time * speed + item.phase) * 8;
+      const targetY = Math.cos(time * (speed * 0.82) + item.phase) * 6;
+      const targetR = Math.sin(time * 0.25 + item.phase) * 2.2;
+
+      item.vx += (targetX - item.tx) * 0.02;
+      item.vy += (targetY - item.ty) * 0.02;
+      item.vr += (targetR - item.rot) * 0.015;
+    });
+
+    // soft collision / repulsion
+    for (let i = 0; i < items.length; i++) {
+      for (let j = i + 1; j < items.length; j++) {
+        const a = items[i];
+        const b = items[j];
+
+        const ax = a.baseX + a.tx;
+        const ay = a.baseY + a.ty;
+        const bx = b.baseX + b.tx;
+        const by = b.baseY + b.ty;
+
+        const dx = bx - ax;
+        const dy = by - ay;
+        const dist = Math.hypot(dx, dy) || 0.0001;
+
+        const minDist = Math.min(
+          a.w,
+          a.h,
+          b.w,
+          b.h
+        ) * 0.92;
+
+        if (dist < minDist) {
+          const overlap = (minDist - dist) / minDist;
+          const nx = dx / dist;
+          const ny = dy / dist;
+          const push = overlap * 1.6;
+
+          a.vx -= nx * push;
+          a.vy -= ny * push;
+          b.vx += nx * push;
+          b.vy += ny * push;
+
+          a.vr -= push * 0.8;
+          b.vr += push * 0.8;
+        }
+      }
+    }
+
+    // integrate and apply
+    items.forEach((item, index) => {
+      item.tx += item.vx;
+      item.ty += item.vy;
+      item.rot += item.vr;
+
+      item.vx *= 0.88;
+      item.vy *= 0.88;
+      item.vr *= 0.86;
+
+      item.tx = clamp(item.tx, -20, 20);
+      item.ty = clamp(item.ty, -16, 16);
+      item.rot = clamp(item.rot, -6, 6);
+
+      item.el.style.setProperty('--tx', `${item.tx}px`);
+      item.el.style.setProperty('--ty', `${item.ty}px`);
+      item.el.style.setProperty('--rot', `${item.rot + (index % 2 === 0 ? -2 : 2)}deg`);
+    });
+
+    requestAnimationFrame(animate);
+  }
+
+  window.addEventListener('resize', measure);
+  measure();
+  requestAnimationFrame(animate);
+});
