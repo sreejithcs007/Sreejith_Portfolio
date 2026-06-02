@@ -1,4 +1,48 @@
 
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const loader = document.getElementById("loader-overlay");
+  const percent = document.getElementById("loader-percent");
+  const label = document.querySelector(".loader-label");
+
+  let value = 0;
+
+  const duration = 1200; // 1.2 sec for 0 → 100
+  const interval = duration / 100;
+
+  const timer = setInterval(() => {
+    value++;
+    percent.textContent = `${value}%`;
+
+    if (value >= 100) {
+      clearInterval(timer);
+
+      label.textContent = "RENDER COMPLETE";
+      percent.textContent = "100%";
+
+      setTimeout(() => {
+        loader.classList.add("fade-out");
+
+        setTimeout(() => {
+          loader.remove();
+        }, 400); // fade duration
+
+      }, 300); // SYSTEM READY visible
+    }
+  }, interval);
+});
+
+
+
+
+
+
+
+
+
+
+
 document.addEventListener('DOMContentLoaded', () => {
   const canvas = document.getElementById('bg-canvas');
   const ctx = canvas ? canvas.getContext('2d') : null;
