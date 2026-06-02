@@ -2029,3 +2029,136 @@ body {
 .card-deploy{
   /* animation: none; */
 }
+
+
+
+
+
+
+
+
+
+
+/* ------------------------------------ */
+/* BOOT LOADER */
+/* ------------------------------------ */
+
+.app-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.app-show {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transition: opacity 0.9s ease, visibility 0.9s ease;
+}
+
+.boot-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 0 24px 34px;
+  background: rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  transition: opacity 0.9s ease, visibility 0.9s ease;
+}
+
+.boot-loader.hide {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.boot-loader__inner {
+  width: min(900px, 100%);
+  text-align: center;
+}
+
+.boot-loader__status {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(14px, 2vw, 18px);
+  font-weight: 600;
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.96);
+  text-shadow: 0 0 18px rgba(84, 197, 248, 0.28);
+  margin-bottom: 14px;
+}
+
+.boot-loader__meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 12px;
+  font-family: 'Space Grotesk', sans-serif;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.boot-loader__label {
+  opacity: 0.78;
+}
+
+.boot-loader__percent {
+  min-width: 72px;
+  text-align: right;
+  color: #ffffff;
+  text-shadow: 0 0 14px rgba(255, 255, 255, 0.18);
+}
+
+.boot-loader__bar {
+  width: 100%;
+  height: 2px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.boot-loader__bar-fill {
+  width: 0%;
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #54c5f8 0%, #8b5cf6 100%);
+  box-shadow: 0 0 20px rgba(84, 197, 248, 0.5);
+}
+
+.boot-loader__status::after {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 14px;
+  margin-left: 8px;
+  background: rgba(255, 255, 255, 0.92);
+  animation: bootBlink 0.8s steps(1) infinite;
+  vertical-align: middle;
+}
+
+@keyframes bootBlink {
+  50% {
+    opacity: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .boot-loader {
+    padding: 0 16px 26px;
+  }
+
+  .boot-loader__meta {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+  }
+
+  .boot-loader__status {
+    letter-spacing: 0.28em;
+  }
+}

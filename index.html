@@ -19,6 +19,28 @@
 
 <body class="h-full">
   <canvas id="bg-canvas"></canvas>
+
+
+<div id="boot-loader" class="boot-loader">
+  <div class="boot-loader__inner">
+    <div class="boot-loader__status" id="boot-status">INITIALIZING SYSTEM</div>
+
+    <div class="boot-loader__meta">
+      <span class="boot-loader__label">STARTING EXPERIENCE</span>
+      <span id="boot-percent" class="boot-loader__percent">0%</span>
+    </div>
+
+    <div class="boot-loader__bar">
+      <div id="boot-progress" class="boot-loader__bar-fill"></div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
   <div id="app-wrapper" class="relative z-10 w-full" style="height:100%; overflow-y:auto; overflow-x:hidden;">
     <!-- Navigation -->
     <nav class="fixed top-0 left-0 w-full z-50 px-6 md:px-12 py-5 flex items-center justify-between"
