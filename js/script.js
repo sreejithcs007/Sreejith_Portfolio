@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (value >= 100) {
       clearInterval(timer);
 
-      label.textContent = "SYSTEM READY";
+      label.textContent = "RENDER COMPLETE";
       percent.textContent = "100%";
 
       setTimeout(() => {

@@ -2224,38 +2224,137 @@ body {
 .card-deploy{ --accent-rgb: 236, 72, 153; --base-rot: -3deg; }
 
 
+/* FULLSCREEN LOADER */
+#loader-overlay{
+    position:fixed;
+    inset:0;
+    z-index:99999;
 
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end;
+    align-items:center;
 
+    padding-bottom:80px;
 
-#loader-overlay {
-  position: fixed;
-  inset: 0;
-  z-index: 99999;
-  overflow: hidden;
-  background: rgba(0, 0, 0, 0.55);
-  backdrop-filter: blur(8px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: opacity .4s ease,
-    visibility .4s ease;
+    background:
+    radial-gradient(
+        circle at center,
+        rgba(84,197,248,0.05) 0%,
+        rgba(0,0,0,0.25) 40%,
+        rgba(0,0,0,0.65) 100%
+    );
+
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+
+    transition:
+    opacity .5s ease,
+    visibility .5s ease;
 }
 
-#loader-overlay.fade-out {
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
+/* FADE OUT */
+#loader-overlay.fade-out{
+    opacity:0;
+    visibility:hidden;
+    pointer-events:none;
 }
 
-.loader-bg {
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(circle at center, rgba(84, 197, 248, 0.10), transparent 22%),
-    radial-gradient(circle at center, rgba(139, 92, 246, 0.08), transparent 35%),
-    linear-gradient(180deg, rgba(0,0,0,0.15), rgba(0,0,0,0.65));
+/* LOADER TEXT */
+ .loader-label{
+    font-family:'Space Grotesk',sans-serif;
+    font-size:11px;
+
+    letter-spacing:.45em;
+    text-transform:uppercase;
+
+    color:rgba(255,255,255,.75);
+
+    margin-bottom:18px;
+
+    text-shadow:
+    0 0 10px rgba(255,255,255,.08);
+} 
+
+
+
+/* PERCENT */
+.loader-percent{
+    font-size:64px;
+    font-weight:800;
+    line-height:1;
+
+    color:#fff;
+
+    text-shadow:
+    0 0 20px rgba(84,197,248,.4),
+    0 0 50px rgba(84,197,248,.15);
 }
 
+/* PROGRESS LINE */
+.loader-progress{
+    width:260px;
+    height:2px;
+
+    margin-top:18px;
+
+    background:rgba(255,255,255,.08);
+
+    overflow:hidden;
+    border-radius:50px;
+}
+
+.loader-progress-fill{
+    width:0%;
+    height:100%;
+
+    background:
+    linear-gradient(
+      90deg,
+      rgba(84,197,248,.5),
+      #ffffff,
+      rgba(84,197,248,.5)
+    );
+
+    box-shadow:
+    0 0 15px rgba(84,197,248,.5);
+
+    transition:width .12s linear;
+}
+
+/* BLUR THE PAGE UNDER LOADER */
+body.loading #app-wrapper{
+    filter:blur(4px);
+    opacity:.25;
+    transform:scale(1.02);
+
+    transition:
+    filter .5s ease,
+    opacity .5s ease,
+    transform .5s ease;
+}
+
+/* RESTORE AFTER LOADING */
+body:not(.loading) #app-wrapper{
+    filter:none;
+    opacity:1;
+    transform:none;
+}
+
+/* OPTIONAL CENTER LIGHT */
+.loader-vignette{
+    position:absolute;
+    inset:0;
+
+    background:
+    radial-gradient(
+      circle at center,
+      rgba(84,197,248,.08),
+      transparent 35%
+    );
+
+    pointer-events:none;
+}
 .meteor-field {
   position: absolute;
   inset: 0;
@@ -2373,8 +2472,10 @@ body {
 }
 
 .loader-label {
-  font-size: 11px;
-  letter-spacing: 0.35em;
+      font-size: 15px;
+    letter-spacing: .55em;
+    margin-top: 12px;
+    font-weight: 700;
   text-transform: uppercase;
   color: rgba(255,255,255,0.8);
   text-shadow: 0 0 10px rgba(255,255,255,0.15);
