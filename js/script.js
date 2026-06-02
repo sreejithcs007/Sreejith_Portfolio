@@ -561,69 +561,69 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 // // projects.js
-let currentIndex = 0;
+// let currentIndex = 0;
 
-const cards = document.querySelectorAll(".carousel-card");
-const totalCards = cards.length;
+// const cards = document.querySelectorAll(".carousel-card");
+// const totalCards = cards.length;
 
-const prevBtn = document.getElementById("carousel-prev");
-const nextBtn = document.getElementById("carousel-next");
-const carouselContainer = document.querySelector(".carousel-container");
+// const prevBtn = document.getElementById("carousel-prev");
+// const nextBtn = document.getElementById("carousel-next");
+// const carouselContainer = document.querySelector(".carousel-container");
 
-function updateCarousel() {
-  cards.forEach((card, i) => {
-    let offset = (i - currentIndex + totalCards) % totalCards;
+// function updateCarousel() {
+//   cards.forEach((card, i) => {
+//     let offset = (i - currentIndex + totalCards) % totalCards;
 
-    if (offset > totalCards / 2) {
-      offset -= totalCards;
-    }
+//     if (offset > totalCards / 2) {
+//       offset -= totalCards;
+//     }
 
-    card.classList.remove("is-active");
+//     card.classList.remove("is-active");
 
-    card.style.transform = `
-      translateX(${offset * 240}px)
-      scale(${offset === 0 ? 1 : 0.85})
-      rotateY(${offset * -12}deg)
-    `;
+//     card.style.transform = `
+//       translateX(${offset * 240}px)
+//       scale(${offset === 0 ? 1 : 0.85})
+//       rotateY(${offset * -12}deg)
+//     `;
 
-    card.style.opacity = offset === 0 ? 1 : 0.6;
-    card.style.zIndex = offset === 0 ? 3 : 1;
+//     card.style.opacity = offset === 0 ? 1 : 0.6;
+//     card.style.zIndex = offset === 0 ? 3 : 1;
 
-    if (offset === 0) {
-      card.classList.add("is-active");
-    }
-  });
-}
+//     if (offset === 0) {
+//       card.classList.add("is-active");
+//     }
+//   });
+// }
 
-function nextCard() {
-  currentIndex = (currentIndex + 1) % totalCards;
-  updateCarousel();
-}
+// function nextCard() {
+//   currentIndex = (currentIndex + 1) % totalCards;
+//   updateCarousel();
+// }
 
-function prevCard() {
-  currentIndex = (currentIndex - 1 + totalCards) % totalCards;
-  updateCarousel();
-}
+// function prevCard() {
+//   currentIndex = (currentIndex - 1 + totalCards) % totalCards;
+//   updateCarousel();
+// }
 
-nextBtn.addEventListener("click", nextCard);
-prevBtn.addEventListener("click", prevCard);
+// nextBtn.addEventListener("click", nextCard);
+// prevBtn.addEventListener("click", prevCard);
 
-let autoSlide = setInterval(nextCard, 4000);
+// let autoSlide = setInterval(nextCard, 4000);
 
-carouselContainer.addEventListener("mouseenter", () => {
-  clearInterval(autoSlide);
-});
+// carouselContainer.addEventListener("mouseenter", () => {
+//   clearInterval(autoSlide);
+// });
 
-carouselContainer.addEventListener("mouseleave", () => {
-  autoSlide = setInterval(nextCard, 4000);
-});
+// carouselContainer.addEventListener("mouseleave", () => {
+//   autoSlide = setInterval(nextCard, 4000);
+// });
 
-document.addEventListener("keydown", (e) => {
-  if (e.key === "ArrowRight") nextCard();
-  if (e.key === "ArrowLeft") prevCard();
-});
+// document.addEventListener("keydown", (e) => {
+//   if (e.key === "ArrowRight") nextCard();
+//   if (e.key === "ArrowLeft") prevCard();
+// });
 
-updateCarousel();
+// updateCarousel();
 
 
 
@@ -732,118 +732,87 @@ document.addEventListener('DOMContentLoaded', () => {
 // });
 
 
-document.addEventListener('DOMContentLoaded', () => {
-  const cards = Array.from(document.querySelectorAll('.stack-card'));
-  if (!cards.length) return;
 
-  const items = cards.map((el, i) => ({
-    el,
-    i,
-    baseX: 0,
-    baseY: 0,
-    w: 0,
-    h: 0,
-    tx: 0,
-    ty: 0,
-    vx: 0,
-    vy: 0,
-    rot: 0,
-    vr: 0,
-    phase: Math.random() * Math.PI * 2
-  }));
 
-  function measure() {
-    items.forEach((item) => {
-      const r = item.el.getBoundingClientRect();
-      item.baseX = r.left + r.width / 2;
-      item.baseY = r.top + r.height / 2;
-      item.w = r.width;
-      item.h = r.height;
-    });
+
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const cards = Array.from(document.querySelectorAll(".carousel-card"));
+  const prevBtn = document.getElementById("carousel-prev");
+  const nextBtn = document.getElementById("carousel-next");
+  const carouselContainer = document.querySelector(".carousel-container");
+
+  if (!cards.length || !prevBtn || !nextBtn || !carouselContainer) return;
+
+  let currentIndex = 0;
+  const total = cards.length;
+
+  function normalizeOffset(index) {
+    let offset = index - currentIndex;
+    if (offset > total / 2) offset -= total;
+    if (offset < -total / 2) offset += total;
+    return offset;
   }
 
-  function clamp(value, min, max) {
-    return Math.max(min, Math.min(max, value));
-  }
+  function updateCarousel() {
+    cards.forEach((card, index) => {
+      const offset = normalizeOffset(index);
 
-  function animate(t) {
-    const time = t * 0.001;
+      card.classList.remove("is-active", "is-prev", "is-next", "is-hidden");
 
-    // gentle independent motion
-    items.forEach((item, index) => {
-      const speed = 0.45 + index * 0.05;
-
-      const targetX = Math.sin(time * speed + item.phase) * 8;
-      const targetY = Math.cos(time * (speed * 0.82) + item.phase) * 6;
-      const targetR = Math.sin(time * 0.25 + item.phase) * 2.2;
-
-      item.vx += (targetX - item.tx) * 0.02;
-      item.vy += (targetY - item.ty) * 0.02;
-      item.vr += (targetR - item.rot) * 0.015;
-    });
-
-    // soft collision / repulsion
-    for (let i = 0; i < items.length; i++) {
-      for (let j = i + 1; j < items.length; j++) {
-        const a = items[i];
-        const b = items[j];
-
-        const ax = a.baseX + a.tx;
-        const ay = a.baseY + a.ty;
-        const bx = b.baseX + b.tx;
-        const by = b.baseY + b.ty;
-
-        const dx = bx - ax;
-        const dy = by - ay;
-        const dist = Math.hypot(dx, dy) || 0.0001;
-
-        const minDist = Math.min(
-          a.w,
-          a.h,
-          b.w,
-          b.h
-        ) * 0.92;
-
-        if (dist < minDist) {
-          const overlap = (minDist - dist) / minDist;
-          const nx = dx / dist;
-          const ny = dy / dist;
-          const push = overlap * 1.6;
-
-          a.vx -= nx * push;
-          a.vy -= ny * push;
-          b.vx += nx * push;
-          b.vy += ny * push;
-
-          a.vr -= push * 0.8;
-          b.vr += push * 0.8;
-        }
+      if (Math.abs(offset) > 1) {
+        card.classList.add("is-hidden");
+        card.style.transform = "translateX(-50%) scale(0.72)";
+        card.style.opacity = "0";
+        card.style.visibility = "hidden";
+        card.style.pointerEvents = "none";
+        card.style.zIndex = "0";
+        return;
       }
-    }
 
-    // integrate and apply
-    items.forEach((item, index) => {
-      item.tx += item.vx;
-      item.ty += item.vy;
-      item.rot += item.vr;
+      const shift = Math.min(window.innerWidth * 0.22, 250);
+      const scale = offset === 0 ? 1 : 0.86;
+      const rotate = offset === 0 ? 0 : offset < 0 ? 12 : -12;
+      const x = offset * shift;
 
-      item.vx *= 0.88;
-      item.vy *= 0.88;
-      item.vr *= 0.86;
-
-      item.tx = clamp(item.tx, -20, 20);
-      item.ty = clamp(item.ty, -16, 16);
-      item.rot = clamp(item.rot, -6, 6);
-
-      item.el.style.setProperty('--tx', `${item.tx}px`);
-      item.el.style.setProperty('--ty', `${item.ty}px`);
-      item.el.style.setProperty('--rot', `${item.rot + (index % 2 === 0 ? -2 : 2)}deg`);
+      card.classList.add(offset === 0 ? "is-active" : offset < 0 ? "is-prev" : "is-next");
+      card.style.transform = `translateX(calc(-50% + ${x}px)) scale(${scale}) rotateY(${rotate}deg)`;
+      card.style.opacity = offset === 0 ? "1" : "0.62";
+      card.style.visibility = "visible";
+      card.style.pointerEvents = "auto";
+      card.style.zIndex = offset === 0 ? "3" : "2";
     });
-
-    requestAnimationFrame(animate);
   }
 
-  window.addEventListener('resize', measure);
-  measure();
-  requestAnimationFrame(animate);
+  function nextCard() {
+    currentIndex = (currentIndex + 1) % total;
+    updateCarousel();
+  }
+
+  function prevCard() {
+    currentIndex = (currentIndex - 1 + total) % total;
+    updateCarousel();
+  }
+
+  nextBtn.addEventListener("click", nextCard);
+  prevBtn.addEventListener("click", prevCard);
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "ArrowRight") nextCard();
+    if (e.key === "ArrowLeft") prevCard();
+  });
+
+  let autoSlide = setInterval(nextCard, 4000);
+
+  carouselContainer.addEventListener("mouseenter", () => clearInterval(autoSlide));
+  carouselContainer.addEventListener("mouseleave", () => {
+    clearInterval(autoSlide);
+    autoSlide = setInterval(nextCard, 4000);
+  });
+
+  window.addEventListener("resize", updateCarousel);
+
+  updateCarousel();
 });
