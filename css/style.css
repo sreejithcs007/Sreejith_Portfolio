@@ -2423,7 +2423,8 @@ body:not(.loading) #app-wrapper {
 
 @media (max-width: 640px) {
   #home {
-    min-height: 100svh;
+    min-height: 80svh;
+    /* //min-height: 100svh; */
     justify-content: flex-start;
     padding-top: 88px;
   }
@@ -2450,5 +2451,119 @@ body:not(.loading) #app-wrapper {
   .glow-btn {
     width: 100%;
     max-width: 300px;
+  }
+}
+
+
+/* ABOUT SECTION  */
+
+
+@media (max-width:768px){
+
+  .about-section{
+    padding-bottom:70px !important;
+  }
+
+}
+
+@media (max-width:768px){
+
+  .section-heading{
+    font-size:42px;
+    margin-bottom:10px;
+  }
+
+  #about .section-heading{
+    margin-top:10px;
+  }
+
+}
+
+@media (max-width:768px){
+
+  .about-photo-wrap{
+    min-height:420px !important;
+  }
+
+  .about-photo-frame{
+    width:min(300px,100%) !important;
+  }
+
+}
+
+
+
+@media (max-width:768px){
+
+  .about-text{
+    gap:12px;
+  }
+
+}
+
+
+
+@media (max-width: 768px) {
+  .about-content {
+    padding: 24px 18px 18px;
+    border-radius: 22px;
+  }
+
+  .about-heading {
+    margin-bottom: 18px;
+  }
+
+  .about-kicker {
+    margin-bottom: 8px;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+  }
+
+  .about-title {
+    font-size: clamp(22px, 6vw, 30px);
+    line-height: 1.08;
+  }
+
+  .about-text {
+    gap: 14px;
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .about-metrics {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin-top: 22px;
+  }
+
+  .about-metric {
+    padding: 12px 8px;
+    border-radius: 16px;
+  }
+
+  .metric-value {
+    font-size: 20px;
+  }
+
+  .metric-label {
+    margin-top: 6px;
+    font-size: 9px;
+    letter-spacing: 0.12em;
+  }
+
+  .about-tags {
+    gap: 8px;
+    margin-top: 16px;
+  }
+
+  .about-tags span {
+    padding: 7px 10px;
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-text p {
+    max-width: 100%;
   }
 }
