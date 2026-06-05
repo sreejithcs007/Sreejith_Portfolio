@@ -41,13 +41,24 @@
     <!-- Navigation -->
     <nav class="fixed top-0 left-0 w-full z-50 px-6 md:px-12 py-5 flex items-center justify-between"
       style="background:linear-gradient(180deg, rgba(0,0,0,0.8) 0%, transparent 100%); transition: background 0.4s ease;">
-      <div class="flex items-center gap-4">
+      <!-- <div class="flex items-center gap-4">
         <div
           class="border border-white/20 w-10 h-10 flex items-center justify-center text-sm font-bold font-space transition-colors duration-300"
           style="border-color: rgba(255,255,255,0.2);">
           SC
-        </div><span class="text-xs tracking-widest opacity-60 hidden sm:block transition-all duration-300">SREEJITH C
+        </div><span class="text-xs tracking-widest opacity-60  transition-all duration-300">SREEJITH C
           S</span>
+      </div> -->
+
+      <div class="flex items-center gap-3">
+        <div
+          class="border border-white/20 w-10 h-10 flex items-center justify-center text-sm font-bold font-space transition-colors duration-300"
+          style="border-color: rgba(255,255,255,0.2);">
+          SC
+        </div>
+        <span class="text-[10px] sm:text-xs tracking-widest opacity-60 whitespace-nowrap transition-all duration-300">
+          SREEJITH C S
+        </span>
       </div>
       <div class="hidden md:flex items-center gap-8">
         <div class="flex items-center gap-6 text-xs tracking-wider font-space">
@@ -75,8 +86,9 @@
     <div class="fixed right-6 top-1/2 -translate-y-1/2 z-40 hidden lg:flex flex-col items-center gap-3">
       <span class="text-[10px] tracking-widest opacity-40 rotate-90 mb-6">SCROLL</span>
       <div class="w-px bg-white/60 scroll-line"></div>
-    </div><!-- Hero Section -->
-    <section id="home" class="min-h-screen flex flex-col items-center justify-center text-center px-6 relative pt-32"
+    </div>
+    <!-- Hero Section -->
+    <!-- <section id="home" class="min-h-screen flex flex-col items-center justify-center text-center px-6 relative pt-32"
       style="min-height:100%;">
       <p id="hero-subtitle" class="text-lg tracking-[0.4em] opacity-40 mb-16 fade-up font-space">I AM </p>
       <h1 class="hero-title fade-up delay-1">FLUTTER<br>
@@ -90,11 +102,39 @@
         class="glow-btn mt-12 px-10 py-4 border border-white/20 text-sm tracking-widest font-space fade-up delay-4">
         EXPLORE MY WORK → </a>
 
+    </section> -->
+
+
+
+
+    <section id="home"
+      class="min-h-screen flex flex-col items-center justify-center text-center px-4 sm:px-6 relative pt-20 sm:pt-28 md:pt-32">
+      <p id="hero-subtitle"
+        class="text-sm sm:text-lg tracking-[0.28em] sm:tracking-[0.4em] opacity-40 mb-4 sm:mb-16 fade-up font-space">
+        I AM
+      </p>
+
+      <h1 class="hero-title fade-up delay-1">FLUTTER<br>DEVELOPER</h1>
+
+      <div class="mt-4 sm:mt-8 text-xs sm:text-sm tracking-widest opacity-50 font-space fade-up delay-2">
+        <span class="rotate-text"></span>
+      </div>
+
+      <p id="hero-desc"
+        class="mt-4 sm:mt-8 max-w-md sm:max-w-lg text-sm leading-relaxed opacity-50 fade-up delay-3 px-2 sm:px-0">
+        Flutter Developer with 1 year of experience building responsive, scalable mobile and web applications using
+        Flutter, GetX, GraphQL, and Clean Architecture.
+      </p>
+
+      <a href="#projects"
+        class="glow-btn mt-7 sm:mt-12 px-8 sm:px-10 py-4 border border-white/20 text-sm tracking-widest font-space fade-up delay-4">
+        EXPLORE MY WORK →
+      </a>
     </section>
 
 
 
-    <section id="about" class="py-32 px-6 md:px-20 max-w-7xl mx-auto w-full">
+    <section id="about" class="pt-10 pb-0   md:py-32 px-6 md:px-20 max-w-7xl mx-auto w-full">
       <h2 class="section-heading fade-up font-space">ABOUT ME</h2>
 
       <div class="about-showcase fade-up delay-1">
@@ -347,19 +387,21 @@
 
 
 
-    <!-- Projects Section -->
-    <!-- <section id="projects-inner" class="py-32 px-6 md:px-20 max-w-7xl mx-auto w-full">
+    <section id="projects-inner" class="py-32 px-6 md:px-20 max-w-7xl mx-auto w-full">
       <h2 class="section-heading fade-up font-space">FEATURED PROJECTS</h2>
-      <div class="mt-16 space-y-20 fade-up delay-1"> -->
 
-
-        <!-- projects.html -->
-        <!-- <section id="projects">
+      <div class="mt-16 fade-up delay-1">
+        <section id="projects">
           <div class="carousel-wrapper">
-            <div class="carousel-container"> -->
+
+            <button class="carousel-nav carousel-nav-prev" id="carousel-prev" aria-label="Previous project">
+              &#10094;
+            </button>
+
+            <div class="carousel-container">
 
               <!-- Project 1 -->
-              <!-- <article class="carousel-card" data-index="0">
+              <article class="carousel-card" data-index="0">
                 <div class="carousel-card-inner">
                   <div class="carousel-card-media">
                     <img src="assets/images/erp.jpg" alt="EONS ERP">
@@ -368,11 +410,11 @@
                   <div class="carousel-card-content">
                     <div>
                       <div class="carousel-card-kicker">
-                        01 / ERP SYSTEM
+                        01 / Enterprise Platform
                       </div>
 
                       <h3 class="carousel-card-title">
-                        EONS ERP
+                        Eons Erp
                       </h3>
 
                       <p class="carousel-card-copy">
@@ -400,10 +442,10 @@
                     </div>
                   </div>
                 </div>
-              </article> -->
+              </article>
 
               <!-- Project 2 -->
-              <!-- <article class="carousel-card" data-index="1">
+              <article class="carousel-card" data-index="1">
                 <div class="carousel-card-inner">
                   <div class="carousel-card-media">
                     <img src="assets/images/bus-tracking.jpg" alt="Bus Tracking">
@@ -412,7 +454,7 @@
                   <div class="carousel-card-content">
                     <div>
                       <div class="carousel-card-kicker">
-                        02 / TRACKING SYSTEM
+                        02 / Live Tracking Suite
                       </div>
 
                       <h3 class="carousel-card-title">
@@ -421,7 +463,8 @@
 
                       <p class="carousel-card-copy">
                         A Flutter-based mobile application for tracking buses in real-time. Features live location
-                        updates, route management, and notifications for parents and school administrators.
+                        updates,
+                        route management, and notifications for parents and school administrators.
                       </p>
                     </div>
 
@@ -439,11 +482,10 @@
                     </div>
                   </div>
                 </div>
-              </article> -->
+              </article>
 
               <!-- Project 3 -->
-
-              <!-- <article class="carousel-card" data-index="2">
+              <article class="carousel-card" data-index="2">
                 <div class="carousel-card-inner">
                   <div class="carousel-card-media">
                     <img src="assets/images/audio-recorder.jpg" alt="Audio Recorder">
@@ -452,16 +494,17 @@
                   <div class="carousel-card-content">
                     <div>
                       <div class="carousel-card-kicker">
-                        03 / MOBILE APP
+                        03 / Audio Workspace
                       </div>
 
                       <h3 class="carousel-card-title">
-                        Audio Recorder
+                        Wave Track
                       </h3>
 
                       <p class="carousel-card-copy">
                         A clean, minimal audio recording application with Hive-based local storage. Features
-                        high-quality audio capture, playback controls, and organized recording management.
+                        high-quality
+                        audio capture, playback controls, and organized recording management.
                       </p>
                     </div>
 
@@ -479,11 +522,10 @@
                     </div>
                   </div>
                 </div>
-              </article> -->
-
+              </article>
 
               <!-- Project 4 -->
-              <!-- <article class="carousel-card" data-index="3">
+              <article class="carousel-card" data-index="3">
                 <div class="carousel-card-inner">
                   <div class="carousel-card-media">
                     <img src="assets/images/mbook.png" alt="mBook">
@@ -492,17 +534,16 @@
                   <div class="carousel-card-content">
                     <div>
                       <div class="carousel-card-kicker">
-                        04 / BOOK READER APP
+                        04 / Digital Library
                       </div>
 
                       <h3 class="carousel-card-title">
-                        mBook
+                        Read Flow
                       </h3>
 
                       <p class="carousel-card-copy">
                         An eBook browsing application that allows users to explore books by category, view detailed book
                         information, and search for books seamlessly.
-
                       </p>
                     </div>
 
@@ -520,31 +561,28 @@
                     </div>
                   </div>
                 </div>
-              </article> -->
+              </article>
 
-
-              <!-- Project  5-->
-
-              <!-- <article class="carousel-card" data-index="4">
+              <!-- Project 5 -->
+              <article class="carousel-card" data-index="4">
                 <div class="carousel-card-inner">
                   <div class="carousel-card-media">
-                    <img src="assets/images/bmical.png" alt="mBook">
+                    <img src="assets/images/bmical.png" alt="BMI Calculator">
                   </div>
 
                   <div class="carousel-card-content">
                     <div>
                       <div class="carousel-card-kicker">
-                        05 / BMI CALCULATOR
+                        05 / Health Metrics
                       </div>
 
                       <h3 class="carousel-card-title">
-                        BMI CALCUATOR
+                        Body Metrics
                       </h3>
 
                       <p class="carousel-card-copy">
-                        A simple bmi calculator created with flutter using Providers as State Management and beautiful
-                        User Interface (UI).
-
+                        A simple BMI calculator created with Flutter using Provider as state management and a beautiful
+                        user interface.
                       </p>
                     </div>
 
@@ -562,250 +600,18 @@
                     </div>
                   </div>
                 </div>
-              </article> -->
+              </article>
 
-
-
-            <!-- </div> -->
-
-            <!-- <button class="carousel-nav carousel-nav-prev" id="carousel-prev" aria-label="Previous project">
-              &#10094;
-            </button>
+            </div>
 
             <button class="carousel-nav carousel-nav-next" id="carousel-next" aria-label="Next project">
               &#10095;
-            </button> -->
-          <!-- </div>
-        </section> -->
+            </button>
 
-
-
-
-
-
-<section id="projects-inner" class="py-32 px-6 md:px-20 max-w-7xl mx-auto w-full">
-  <h2 class="section-heading fade-up font-space">FEATURED PROJECTS</h2>
-
-  <div class="mt-16 fade-up delay-1">
-    <section id="projects">
-      <div class="carousel-wrapper">
-
-        <button class="carousel-nav carousel-nav-prev" id="carousel-prev" aria-label="Previous project">
-          &#10094;
-        </button>
-
-        <div class="carousel-container">
-
-          <!-- Project 1 -->
-          <article class="carousel-card" data-index="0">
-            <div class="carousel-card-inner">
-              <div class="carousel-card-media">
-                <img src="assets/images/erp.jpg" alt="EONS ERP">
-              </div>
-
-              <div class="carousel-card-content">
-                <div>
-                  <div class="carousel-card-kicker">
-                    01 / ERP SYSTEM
-                  </div>
-
-                  <h3 class="carousel-card-title">
-                    Eons Erp
-                  </h3>
-
-                  <p class="carousel-card-copy">
-                    A comprehensive ERP solution built with Flutter for both web and mobile platforms. Manages
-                    inventory, sales, purchases, and accounts with real-time synchronization and offline support.
-                  </p>
-                </div>
-
-                <div>
-                  <div class="carousel-card-stack">
-                    Flutter / GetX / GraphQL / Firebase / Hive / Excel Integration
-                  </div>
-
-                  <div class="carousel-card-actions">
-                    <a href="https://eons-erp.com" class="carousel-btn" target="_blank" rel="noopener noreferrer">
-                      Live Demo
-                    </a>
-                    <a href="#" class="carousel-btn">
-                      Play Store
-                    </a>
-                    <a href="#" class="carousel-btn">
-                      Apple Store
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <!-- Project 2 -->
-          <article class="carousel-card" data-index="1">
-            <div class="carousel-card-inner">
-              <div class="carousel-card-media">
-                <img src="assets/images/bus-tracking.jpg" alt="Bus Tracking">
-              </div>
-
-              <div class="carousel-card-content">
-                <div>
-                  <div class="carousel-card-kicker">
-                    02 / TRACKING SYSTEM
-                  </div>
-
-                  <h3 class="carousel-card-title">
-                    Bus Tracking App
-                  </h3>
-
-                  <p class="carousel-card-copy">
-                    A Flutter-based mobile application for tracking buses in real-time. Features live location updates,
-                    route management, and notifications for parents and school administrators.
-                  </p>
-                </div>
-
-                <div>
-                  <div class="carousel-card-stack">
-                    Flutter / Python / Provider / REST API
-                  </div>
-
-                  <div class="carousel-card-actions">
-                    <a href="https://github.com/shihabksaleem/bus_tracking_application.git" class="carousel-btn"
-                      target="_blank" rel="noopener noreferrer">
-                      GitHub
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <!-- Project 3 -->
-          <article class="carousel-card" data-index="2">
-            <div class="carousel-card-inner">
-              <div class="carousel-card-media">
-                <img src="assets/images/audio-recorder.jpg" alt="Audio Recorder">
-              </div>
-
-              <div class="carousel-card-content">
-                <div>
-                  <div class="carousel-card-kicker">
-                    03 / AUDIO PLATFORM
-                  </div>
-
-                  <h3 class="carousel-card-title">
-                    Wave Track
-                  </h3>
-
-                  <p class="carousel-card-copy">
-                    A clean, minimal audio recording application with Hive-based local storage. Features high-quality
-                    audio capture, playback controls, and organized recording management.
-                  </p>
-                </div>
-
-                <div>
-                  <div class="carousel-card-stack">
-                    Flutter / Dart / Provider / Hive / Audio Plugins
-                  </div>
-
-                  <div class="carousel-card-actions">
-                    <a href="https://github.com/sreejithcs007/audiorecorder" class="carousel-btn" target="_blank"
-                      rel="noopener noreferrer">
-                      GitHub
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <!-- Project 4 -->
-          <article class="carousel-card" data-index="3">
-            <div class="carousel-card-inner">
-              <div class="carousel-card-media">
-                <img src="assets/images/mbook.png" alt="mBook">
-              </div>
-
-              <div class="carousel-card-content">
-                <div>
-                  <div class="carousel-card-kicker">
-                    04 / BOOK READER APP
-                  </div>
-
-                  <h3 class="carousel-card-title">
-                    Read Flow
-                  </h3>
-
-                  <p class="carousel-card-copy">
-                    An eBook browsing application that allows users to explore books by category, view detailed book
-                    information, and search for books seamlessly.
-                  </p>
-                </div>
-
-                <div>
-                  <div class="carousel-card-stack">
-                    Flutter / Provider / Googlefonts / http / MVC Architecture
-                  </div>
-
-                  <div class="carousel-card-actions">
-                    <a href="https://github.com/sreejithcs007/mbook" class="carousel-btn" target="_blank"
-                      rel="noopener noreferrer">
-                      GitHub
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <!-- Project 5 -->
-          <article class="carousel-card" data-index="4">
-            <div class="carousel-card-inner">
-              <div class="carousel-card-media">
-                <img src="assets/images/bmical.png" alt="BMI Calculator">
-              </div>
-
-              <div class="carousel-card-content">
-                <div>
-                  <div class="carousel-card-kicker">
-                    05 / BMI CALCULATOR
-                  </div>
-
-                  <h3 class="carousel-card-title">
-                    Body Metrics
-                  </h3>
-
-                  <p class="carousel-card-copy">
-                    A simple BMI calculator created with Flutter using Provider as state management and a beautiful
-                    user interface.
-                  </p>
-                </div>
-
-                <div>
-                  <div class="carousel-card-stack">
-                    Flutter / Dart / Provider
-                  </div>
-
-                  <div class="carousel-card-actions">
-                    <a href="https://github.com/sreejithcs007/bmicalculator" class="carousel-btn" target="_blank"
-                      rel="noopener noreferrer">
-                      GitHub
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </article>
-
-        </div>
-
-        <button class="carousel-nav carousel-nav-next" id="carousel-next" aria-label="Next project">
-          &#10095;
-        </button>
-
+          </div>
+        </section>
       </div>
     </section>
-  </div>
-</section>
 
 
 
@@ -830,12 +636,12 @@
 
 
 
-#
-    
-    
-    
-    
-    
+
+
+
+
+
+
     <section id="contact" class="py-32 px-6 md:px-20 max-w-5xl mx-auto w-full text-center">
       <h2 id="contact-heading" class="section-heading fade-up font-space">LET'S BUILD<br>
         SOMETHING AMAZING</h2>
