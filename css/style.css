@@ -1291,8 +1291,8 @@ body {
   }
 }
 
-@media (max-width: 900px) {
-  .experience-constellation {
+ @media (max-width: 1350px) {
+  /* .experience-constellation {
     min-height: auto;
     padding: 20px 0;
   }
@@ -1328,11 +1328,123 @@ body {
 
   .experience-card-head {
     flex-direction: column;
+  } */
+
+
+
+    .experience-constellation {
+    position: relative;
+    min-height: auto;
+    margin-top: 40px;
+    padding: 10px 0 10px 0px;
+    overflow: visible;
+    background: transparent;
+    border-radius: 0;
   }
+
+  .experience-timeline-line {
+    position: absolute;
+    left: 12px;
+    top: 16px;
+    bottom: 16px;
+    width: 2px;
+    border-radius: 999px;
+    background: linear-gradient(
+      180deg,
+      rgba(84, 197, 248, 0.12),
+      rgba(84, 197, 248, 0.95),
+      rgba(84, 197, 248, 0.12)
+    );
+    box-shadow: 0 0 18px rgba(84, 197, 248, 0.35);
+    z-index: 0;
+  }
+
+  .constellation-core,
+  .experience-node::after {
+    display: none !important;
+  }
+
+  .experience-node {
+    position: relative !important;
+    inset: auto !important;
+    width: 100%;
+    margin: 0 0 22px;
+    padding-left: 22px;
+    z-index: 1;
+  }
+
+  .experience-node:last-child {
+    margin-bottom: 0;
+  }
+
+  .node-pin {
+    left: 3px !important;
+    right: auto !important;
+    top: 26px;
+    transform: none;
+    z-index: 2;
+  }
+
+  .experience-card {
+    padding: 18px;
+    border-radius: 22px;
+  }
+
+  .experience-card-head {
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
+    margin-bottom: 12px;
+  }
+
+  .career-role {
+    font-size: 22px;
+    line-height: 1.08;
+  }
+
+  .career-summary {
+    font-size: 14px;
+    line-height: 1.65;
+  }
+
+  .career-tags {
+    gap: 8px;
+    margin-top: 14px;
+  }
+
+  .career-tags span {
+    padding: 6px 9px;
+    font-size: 10px;
+  }
+
+  .career-points {
+    margin-top: 14px;
+    padding-left: 18px;
+  }
+
+  .experience-node:nth-of-type(1) .experience-card,
+  .experience-node:nth-of-type(2) .experience-card {
+    animation: none;
+  }
+
+
+
 }
+ 
 
 
-/* Tech Stacks Section */
+
+   
+
+
+
+
+
+
+
+
+
+ /* Tech Stacks Section */
 .tech-stacks-section {
   position: relative;
   max-width: 1400px;
@@ -2503,7 +2615,7 @@ body:not(.loading) #app-wrapper {
 
 
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .about-content {
     padding: 24px 18px 18px;
     border-radius: 22px;
@@ -2565,5 +2677,132 @@ body:not(.loading) #app-wrapper {
 @media (max-width: 768px) {
   .about-text p {
     max-width: 100%;
+  }
+}
+
+
+
+/* experience mobile section */
+
+/* MOBILE VERTICAL TIMELINE — EXPERIENCE */
+@media (max-width: 1350px) {
+  #experience {
+    padding-top: 96px;
+    padding-bottom: 96px;
+  }
+
+  .experience-constellation {
+    position: relative;
+    margin-top: 40px;
+    min-height: auto;
+    padding: 8px 0 8px 5px;
+    overflow: visible;
+    background: none;
+    border-radius: 0;
+  }
+
+  .experience-constellation::before {
+    content: "";
+    position: absolute;
+    left: 10px;
+    top: 12px;
+    bottom: 12px;
+    width: 2px;
+    border-radius: 999px;
+    background: linear-gradient(
+      180deg,
+      rgba(84, 197, 248, 0.15),
+      rgba(84, 197, 248, 0.95),
+      rgba(84, 197, 248, 0.15)
+    );
+    box-shadow: 0 0 18px rgba(84, 197, 248, 0.35);
+    opacity: 1;
+    mask-image: none;
+    background-image: none;
+  }
+
+  .experience-constellation::after {
+    display: none;
+  }
+
+  .constellation-core,
+  .experience-node::after {
+    display: none !important;
+  }
+
+  .experience-node {
+    position: relative !important;
+    inset: auto !important;
+    width: 100%;
+    margin: 0 0 22px;
+    padding-left: 28px;
+  }
+
+  .experience-node:last-child {
+    margin-bottom: 0;
+  }
+
+  .node-pin {
+    left: 0 !important;
+    right: auto !important;
+    top: 28px;
+    transform: none;
+  }
+
+  .experience-card {
+    padding: 20px;
+    border-radius: 22px;
+  }
+
+  .experience-card-head {
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
+    margin-bottom: 14px;
+  }
+
+  .career-date {
+    align-self: flex-start;
+    display: inline-flex;
+    padding: 7px 10px;
+    border: 1px solid rgba(84, 197, 248, 0.18);
+    border-radius: 999px;
+    background: rgba(84, 197, 248, 0.05);
+    letter-spacing: 0.14em;
+    opacity: 0.9;
+  }
+
+  .career-role {
+    font-size: 22px;
+    line-height: 1.08;
+  }
+
+  .career-company {
+    margin-top: 4px;
+  }
+
+  .career-summary {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .career-tags {
+    gap: 8px;
+    margin-top: 14px;
+  }
+
+  .career-tags span {
+    padding: 6px 9px;
+    font-size: 10px;
+  }
+
+  .career-points {
+    margin-top: 14px;
+    padding-left: 18px;
+  }
+
+  .experience-node:nth-of-type(1) .experience-card,
+  .experience-node:nth-of-type(2) .experience-card {
+    animation: none;
   }
 }
