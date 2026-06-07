@@ -2806,3 +2806,85 @@ body:not(.loading) #app-wrapper {
     animation: none;
   }
 }
+
+
+
+/* mobile and tab lets connect  */
+
+/* PROJECTS MOBILE/TABLET FIX */
+@media (max-width:1024px){
+
+  #contact{
+    margin-top:180px !important;
+    position:relative;
+    z-index:20;
+  }
+
+} 
+
+@media (max-width: 768px) {
+
+  /* Contact Section */
+  #contact {
+    padding: 96px 24px !important;
+  }
+
+  /* Main Heading */
+  #contact h2,
+  .contact-title {
+    font-size: clamp(18px, 10vw, 36px) !important;
+    line-height: 0.95 !important;
+    letter-spacing: -0.03em;
+    text-align: center;
+  }
+
+ 
+
+  /* @media (max-width:768px){
+
+  #contact h2{
+    font-size: 15px !important;
+    line-height: 0.95;
+  }
+
+} */
+
+  /* Description */
+  #contact p,
+  .contact-description {
+    font-size: 10px;
+    line-height: 1.7;
+    max-width: 320px;
+    margin: 32px auto;
+  }
+
+  /* Buttons Container */
+  .contact-links,
+  .contact-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 32px;
+  }
+}
+
+@media (max-width:768px){
+
+  .contact-title{
+    font-size:10px !important;
+    line-height:0.9;
+  }
+
+}
+
+@media (max-width:768px){
+
+  #contact .glow-btn{
+    min-width: 70px;
+    font-size:10px !important;
+     text-align: center;
+     padding: 10px 0px !important;
+  }
+
+}
