@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" class="h-full">
+<html lang="en" >
 
 <head>
   <meta charset="UTF-8">
@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body class="h-full">
+<body>
   <canvas id="bg-canvas"></canvas>
 
   <!-- Loader Overlay -->
@@ -37,10 +37,13 @@
 
 
 
-  <div id="app-wrapper" class="relative z-10 w-full" style="height:100%; overflow-y:auto; overflow-x:hidden;">
+  <!-- <div id="app-wrapper" class="relative z-10 w-full" style="height:100%; overflow-y:auto; overflow-x:auto;"> -->
+   <div id="app-wrapper"
+     class="relative z-10 w-full">
     <!-- Navigation -->
-    <nav class="fixed top-0 left-0 w-full z-50 px-6 md:px-12 py-5 flex items-center justify-between"
-      style="background:linear-gradient(180deg, rgba(0,0,0,0.8) 0%, transparent 100%); transition: background 0.4s ease;">
+    <!-- <nav class="fixed top-0 left-0 w-full z-50 px-6 md:px-12 py-5 flex items-center justify-between"
+      style="background:linear-gradient(180deg, rgba(0,0,0,0.8) 0%, transparent 100%); transition: background 0.4s ease;"> -->
+    <nav class="main-nav fixed inset-x-0 top-0 z-50 px-6 md:px-12 py-5 flex items-center justify-between">
       <!-- <div class="flex items-center gap-4">
         <div
           class="border border-white/20 w-10 h-10 flex items-center justify-center text-sm font-bold font-space transition-colors duration-300"
@@ -66,13 +69,9 @@
             href="#experience" class="nav-link">03 / EXPERIENCE</a> <a href="#projects" class="nav-link">04 /
             PROJECTS</a> <a href="#contact" class="nav-link">05 / CONTACT</a>
         </div>
-        <button id="theme-btn" class="theme-toggle" title="Toggle theme">
-          <div class="theme-toggle-circle">
-            <i data-lucide="sun" class="theme-toggle-icon" style="width: 12px; height: 12px;"></i>
-          </div>
-        </button>
       </div>
-    </nav><!-- Social Left -->
+    </nav>
+    <!-- Social Left -->
     <div class="fixed left-6 top-1/2 -translate-y-1/2 z-40 hidden lg:flex flex-col gap-6 items-center">
       <a href="https://github.com/sreejithcs007" target="_blank" rel="noopener noreferrer"
         class="opacity-40 hover:opacity-100 transition-opacity"><i data-lucide="github"
@@ -388,7 +387,7 @@
 
 
 
-    <section id="projects-inner" class="py-32 px-6 md:px-20 max-w-7xl mx-auto w-full">
+    <section id="projects-inner" class="py-32  px-6 md:px-20 max-w-7xl mx-auto w-full">
       <h2 class="section-heading fade-up font-space">FEATURED PROJECTS</h2>
 
       <div class="mt-16 fade-up delay-1">
@@ -656,12 +655,16 @@
           href="https://github.com/sreejithcs007" target="_blank" rel="noopener noreferrer"
           class="glow-btn glass px-6 py-3 rounded-lg text-xs tracking-wider font-space">GITHUB</a>
       </div>
+      
     </section><!-- Footer -->
     <footer class="py-16 px-6 text-center border-t border-white/5">
       <p class="text-sm font-bold font-space tracking-wider">SREEJITH C S</p>
       <p class="text-xs opacity-30 mt-2 tracking-widest">FLUTTER DEVELOPER</p>
       <p class="text-xs opacity-20 mt-6">© 2026</p>
     </footer>
+  
+  
+  
   </div>
   <script src="js/script.js"></script>
   <script>(function () { function c() { var b = a.contentDocument || a.contentWindow.document; if (b) { var d = b.createElement('script'); d.innerHTML = "window.__CF$cv$params={r:'a03e864aaa84ff7b',t:'MTc4MDE1MjM0Nw=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);"; b.getElementsByTagName('head')[0].appendChild(d) } } if (document.body) { var a = document.createElement('iframe'); a.height = 1; a.width = 1; a.style.position = 'absolute'; a.style.top = 0; a.style.left = 0; a.style.border = 'none'; a.style.visibility = 'hidden'; document.body.appendChild(a); if ('loading' !== document.readyState) c(); else if (window.addEventListener) document.addEventListener('DOMContentLoaded', c); else { var e = document.onreadystatechange || function () { }; document.onreadystatechange = function (b) { e(b); 'loading' !== document.readyState && (document.onreadystatechange = e, c()) } } } })();</script>
