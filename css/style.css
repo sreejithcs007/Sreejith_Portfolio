@@ -1,10 +1,12 @@
 html,
 body {
-  height: 100%;
+min-height: 100%;
   margin: 0;
   overflow-x: hidden;
+    overflow-y:auto !important;
  
 }
+
 
 body {
   background: #000;
@@ -16,6 +18,12 @@ body {
 
 .font-space {
   font-family: 'Space Grotesk', sans-serif;
+}
+#app-wrapper{
+  /* background:red; */
+  width:100%;
+  overflow-x:hidden;
+
 }
 
 .hero-title {
@@ -234,6 +242,35 @@ section {
 .nav-link:hover {
   opacity: 1;
 }
+
+
+
+
+
+.main-nav{
+  position:fixed;
+  left:0;
+  right: 0px;
+  width:auto;
+  max-width:none;
+  z-index:50;
+  background:rgba(4,8,15,.25);
+   backdrop-filter:blur(5px);
+  -webkit-backdrop-filter:blur(20px);
+
+}
+
+ /* .main-nav{
+  position:fixed;
+  inset:0 0 auto 0;
+} */
+
+/* .main-nav.nav-scrolled{
+  background:rgba(4,8,15,.75);  
+   backdrop-filter:blur(20px);
+  -webkit-backdrop-filter:blur(20px); 
+   }  */ 
+
 
 
 
@@ -631,7 +668,7 @@ body {
   z-index: 9998;
   border: 1px solid rgba(84, 197, 248, 0.45);
   background: rgba(84, 197, 248, 0.05);
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(1px);
   box-shadow: 0 0 30px rgba(84, 197, 248, 0.15);
   transform: translate3d(0, 0, 0);
   transition: opacity 0.2s ease;
@@ -1688,9 +1725,9 @@ body {
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
   .tech-stacks-section {
-    padding: 90px 16px 80px;
+    padding: 90px 24px 80px;
   }
 
   .tech-stacks-grid {
@@ -2813,50 +2850,37 @@ body:not(.loading) #app-wrapper {
 /* mobile and tab lets connect  */
 
 /* PROJECTS MOBILE/TABLET FIX */
-@media (max-width:1024px){
 
-  #contact{
-    margin-top:180px !important;
-    position:relative;
-    z-index:20;
-  }
 
-} 
-
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
 
   /* Contact Section */
-  #contact {
-    padding: 96px 24px !important;
+#contact {
+    padding: 0px 24px 80px;
   }
 
   /* Main Heading */
-  #contact h2,
+  
   .contact-title {
-    font-size: clamp(18px, 10vw, 36px) !important;
+    font-size: clamp(20px, 10vw, 36px) !important;
     line-height: 0.95 !important;
     letter-spacing: -0.03em;
     text-align: center;
   }
 
- 
-
-  /* @media (max-width:768px){
-
-  #contact h2{
-    font-size: 15px !important;
-    line-height: 0.95;
+    .contact h2 {
+    font-size: clamp(20px, 10vw, 56px) !important;
+    line-height: 0.95 !important;
+    letter-spacing: -0.03em;
+    text-align: center;
   }
 
-} */
 
   /* Description */
   #contact p,
   .contact-description {
-    font-size: 10px;
+    font-size: clamp(10px, 10vw, 15px) !important;
     line-height: 1.7;
-    max-width: 320px;
-    margin: 32px auto;
   }
 
   /* Buttons Container */
@@ -2865,31 +2889,27 @@ body:not(.loading) #app-wrapper {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 12px;
-    margin-top: 32px;
+   
   }
 }
-
 @media (max-width:768px){
 
-  .contact-title{
-    font-size:10px !important;
-    line-height:0.9;
+  #contact .mt-12{
+    display:flex;
+    justify-content:center;
+    gap:16px;
   }
-
-}
-
-@media (max-width:768px){
 
   #contact .glow-btn{
-    min-width: 70px;
-    font-size:10px !important;
-     text-align: center;
-     padding: 10px 0px !important;
+    flex:1;
+    max-width:120px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
   }
 
 }
-
 
 
 
@@ -2922,6 +2942,7 @@ body:not(.loading) #app-wrapper {
   .carousel-container{
     height:auto !important;
     min-height:auto !important;
+    padding-bottom:0px !important;
   }
 
   .carousel-track{
@@ -3003,3 +3024,7 @@ body:not(.loading) #app-wrapper {
     display:none !important;
   }
 }
+
+
+
+
