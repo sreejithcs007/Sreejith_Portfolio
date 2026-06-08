@@ -3,6 +3,7 @@ body {
   height: 100%;
   margin: 0;
   overflow-x: hidden;
+ 
 }
 
 body {
@@ -2887,4 +2888,118 @@ body:not(.loading) #app-wrapper {
      padding: 10px 0px !important;
   }
 
+}
+
+
+
+
+/* =========================
+   MOBILE / TABLET CAROUSEL
+   ========================= */
+/* ====================================
+   MOBILE + TABLET PROJECT CAROUSEL
+   Floating Overlay Style
+   ==================================== */
+
+/* ==========================================
+   MOBILE + TABLET PROJECT CAROUSEL
+   FUTURISTIC FLOATING CARD
+   ========================================== */
+/* ==========================================
+   CLEAN MOBILE PROJECT CAROUSEL
+   ========================================== */
+
+
+/* ==========================================
+   MOBILE PHONES
+   ========================================== */
+/* ==================================
+   MOBILE PROJECTS → VERTICAL CARDS
+   ================================== */
+
+@media (max-width:1024px){
+
+  .carousel-container{
+    height:auto !important;
+    min-height:auto !important;
+  }
+
+  .carousel-track{
+    display:flex !important;
+    flex-direction:column !important;
+    gap:24px;
+    transform:none !important;
+  }
+
+  .carousel-card{
+    position:relative !important;
+    inset:auto !important;
+    transform:none !important;
+    opacity:1 !important;
+    visibility:visible !important;
+    width:100% !important;
+    margin:0 !important;
+  }
+
+  .carousel-card-inner{
+    display:flex;
+    flex-direction:column;
+    height:auto !important;
+    border-radius:20px;
+    overflow:hidden;
+  }
+
+  .carousel-card-media{
+    height:220px;
+  }
+
+  .carousel-card-media img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+  }
+
+  .carousel-card-content{
+    position:relative !important;
+    inset:auto !important;
+    padding:20px;
+    background:rgba(8,8,8,.92);
+    backdrop-filter:blur(20px);
+  }
+
+  .carousel-card-title{
+    font-size:28px;
+    margin-bottom:10px;
+  }
+
+  .carousel-card-copy{
+    display:block;
+    font-size:14px;
+    line-height:1.6;
+    margin-bottom:14px;
+  }
+
+  .carousel-card-stack{
+    font-size:10px;
+    line-height:1.6;
+    margin-bottom:14px;
+  }
+
+  .carousel-card-actions{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-top:14px;
+  }
+
+  .carousel-card-actions a{
+    padding:10px 16px;
+    font-size:11px;
+    border-radius:12px;
+  }
+
+  .carousel-nav,
+  .carousel-dots{
+    display:none !important;
+  }
 }
