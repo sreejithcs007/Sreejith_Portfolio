@@ -2942,7 +2942,8 @@ body:not(.loading) #app-wrapper {
   .carousel-container{
     height:auto !important;
     min-height:auto !important;
-    padding-bottom:0px !important;
+    /* padding-bottom: 10px !important; */
+    margin-bottom: 0 !important;
   }
 
   .carousel-track{
@@ -2960,6 +2961,7 @@ body:not(.loading) #app-wrapper {
     visibility:visible !important;
     width:100% !important;
     margin:0 !important;
+    padding-bottom:25px !important;
   }
 
   .carousel-card-inner{
