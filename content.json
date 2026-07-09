@@ -1,0 +1,129 @@
+[
+  {
+    "id": "01",
+    "kicker": "01 / Enterprise Platform",
+    "title": "Eons Erp",
+    "description": "A comprehensive ERP solution built with Flutter for both web and mobile platforms. Manages inventory, sales, purchases, and accounts with real-time synchronization and offline support.",
+    "image": "assets/images/erp.jpg",
+    "imageAlt": "EONS ERP",
+    "stack": "Flutter / GetX / GraphQL / Firebase / Hive / Excel Integration",
+    "links": [
+      {
+        "text": "Live Demo",
+        "url": "https://eons-erp.com",
+        "target": "_blank"
+      },
+      {
+        "text": "Play Store",
+        "url": "#",
+        "target": ""
+      },
+      {
+        "text": "Apple Store",
+        "url": "#",
+        "target": ""
+      }
+    ]
+  },
+  {
+    "id": "02",
+    "kicker": "02 / Food & Recipes",
+    "title": "Recipely",
+    "description": "A premium Flutter recipe application featuring recipe discovery, smart search, favorites, curated collections, and a modern user experience powered by Clean Architecture and Supabase.",
+    "image": "assets/images/recipely.png",
+    "imageAlt": "Recipely Recipe App",
+    "stack": "Flutter / Dart / BLoC / Supabase",
+    "links": [
+      {
+        "text": "GitHub",
+        "url": "https://github.com/sreejithcs007/recipely",
+        "target": "_blank"
+      }
+    ]
+  },
+  {
+    "id": "03",
+    "kicker": "03 / Content Management",
+    "title": "Recipely Studio",
+    "description": "A modern Flutter-powered CMS built for Recipely, enabling seamless recipe management with category and tag organization, featured & trending controls, media library, analytics dashboard, user management, and real-time content synchronization through Supabase.",
+    "image": "assets/images/recipely-studio.png",
+    "imageAlt": "Recipely Studio CMS Dashboard",
+    "stack": "Flutter / Dart / BLoC / Supabase",
+    "links": [
+      {
+        "text": "GitHub",
+        "url": "https://github.com/sreejithcs007/recipely-studio",
+        "target": "_blank"
+      },
+      {
+        "text": "Live Demo",
+        "url": "https://recipelyapp.netlify.app/#/login",
+        "target": "_blank"
+      }
+    ]
+  },
+  {
+    "id": "04",
+    "kicker": "04 / Live Tracking Suite",
+    "title": "Bus Tracking App",
+    "description": "A Flutter-based mobile application for tracking buses in real-time. Features live location updates, route management, and notifications for parents and school administrators.",
+    "image": "assets/images/bus-tracking.jpg",
+    "imageAlt": "Bus Tracking",
+    "stack": "Flutter / Python / Provider / REST API",
+    "links": [
+      {
+        "text": "GitHub",
+        "url": "https://github.com/shihabksaleem/bus_tracking_application.git",
+        "target": "_blank"
+      }
+    ]
+  },
+  {
+    "id": "05",
+    "kicker": "05 / Audio Workspace",
+    "title": "Wave Track",
+    "description": "A clean, minimal audio recording application with Hive-based local storage. Features high-quality audio capture, playback controls, and organized recording management.",
+    "image": "assets/images/audio-recorder.jpg",
+    "imageAlt": "Audio Recorder",
+    "stack": "Flutter / Dart / Provider / Hive / Audio Plugins",
+    "links": [
+      {
+        "text": "GitHub",
+        "url": "https://github.com/sreejithcs007/audiorecorder",
+        "target": "_blank"
+      }
+    ]
+  },
+  {
+    "id": "06",
+    "kicker": "06 / Digital Library",
+    "title": "Read Flow",
+    "description": "An eBook browsing application that allows users to explore books by category, view detailed book information, and search for books seamlessly.",
+    "image": "assets/images/mbook.png",
+    "imageAlt": "mBook",
+    "stack": "Flutter / Provider / Googlefonts / http / MVC Architecture",
+    "links": [
+      {
+        "text": "GitHub",
+        "url": "https://github.com/sreejithcs007/mbook",
+        "target": "_blank"
+      }
+    ]
+  },
+  {
+    "id": "07",
+    "kicker": "07 / Health Metrics",
+    "title": "Body Metrics",
+    "description": "A simple BMI calculator created with Flutter using Provider as state management and a beautiful user interface.",
+    "image": "assets/images/bmical.png",
+    "imageAlt": "BMI Calculator",
+    "stack": "Flutter / Dart / Provider",
+    "links": [
+      {
+        "text": "GitHub",
+        "url": "https://github.com/sreejithcs007/bmicalculator",
+        "target": "_blank"
+      }
+    ]
+  }
+]

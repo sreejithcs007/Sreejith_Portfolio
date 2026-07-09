@@ -547,82 +547,154 @@
 
 
   document.addEventListener("DOMContentLoaded", () => {
-    const cards = Array.from(document.querySelectorAll(".carousel-card"));
+    const carouselContainer = document.querySelector(".carousel-container");
     const prevBtn = document.getElementById("carousel-prev");
     const nextBtn = document.getElementById("carousel-next");
-    const carouselContainer = document.querySelector(".carousel-container");
 
-    if (!cards.length || !prevBtn || !nextBtn || !carouselContainer) return;
+    if (!carouselContainer || !prevBtn || !nextBtn) return;
 
-    let currentIndex = 0;
-    const total = cards.length;
+    fetch("content.json")
+      .then(response => response.json())
+      .then(projects => {
+        // Clear any placeholder
+        carouselContainer.innerHTML = "";
 
-    function normalizeOffset(index) {
-      let offset = index - currentIndex;
-      if (offset > total / 2) offset -= total;
-      if (offset < -total / 2) offset += total;
-      return offset;
-    }
+        projects.forEach((proj, idx) => {
+          const card = document.createElement("article");
+          card.className = "carousel-card";
+          card.setAttribute("data-index", idx);
 
-    function updateCarousel() {
-      cards.forEach((card, index) => {
-        const offset = normalizeOffset(index);
+          const linksHTML = (proj.links || []).map(link => {
+            const targetAttr = link.target ? `target="${link.target}" rel="noopener noreferrer"` : '';
+            return `<a href="${link.url}" class="carousel-btn" ${targetAttr}>${link.text}</a>`;
+          }).join("\n");
 
-        card.classList.remove("is-active", "is-prev", "is-next", "is-hidden");
+          card.innerHTML = `
+            <div class="carousel-card-inner">
+              <div class="carousel-card-media">
+                <img src="${proj.image}" alt="${proj.imageAlt || proj.title}">
+              </div>
 
-        if (Math.abs(offset) > 1) {
-          card.classList.add("is-hidden");
-          card.style.transform = "translateX(-50%) scale(0.72)";
-          card.style.opacity = "0";
-          card.style.visibility = "hidden";
-          card.style.pointerEvents = "none";
-          card.style.zIndex = "0";
-          return;
+              <div class="carousel-card-content">
+                <div>
+                  <div class="carousel-card-kicker">
+                    ${proj.kicker}
+                  </div>
+
+                  <h3 class="carousel-card-title">
+                    ${proj.title}
+                  </h3>
+
+                  <p class="carousel-card-copy">
+                    ${proj.description}
+                  </p>
+                </div>
+
+                <div>
+                  <div class="carousel-card-stack">
+                    ${proj.stack}
+                  </div>
+
+                  <div class="carousel-card-actions">
+                    ${linksHTML}
+                  </div>
+                </div>
+              </div>
+            </div>
+          `;
+          carouselContainer.appendChild(card);
+        });
+
+        // Initialize Carousel with dynamic cards
+        const cards = Array.from(carouselContainer.querySelectorAll(".carousel-card"));
+        if (!cards.length) return;
+
+        let currentIndex = 0;
+        const total = cards.length;
+
+        function normalizeOffset(index) {
+          let offset = index - currentIndex;
+          if (offset > total / 2) offset -= total;
+          if (offset < -total / 2) offset += total;
+          return offset;
         }
 
-        const shift = Math.min(window.innerWidth * 0.22, 250);
-        const scale = offset === 0 ? 1 : 0.86;
-        const rotate = offset === 0 ? 0 : offset < 0 ? 12 : -12;
-        const x = offset * shift;
+        function updateCarousel() {
+          cards.forEach((card, index) => {
+            const offset = normalizeOffset(index);
 
-        card.classList.add(offset === 0 ? "is-active" : offset < 0 ? "is-prev" : "is-next");
-        card.style.transform = `translateX(calc(-50% + ${x}px)) scale(${scale}) rotateY(${rotate}deg)`;
-        card.style.opacity = offset === 0 ? "1" : "0.62";
-        card.style.visibility = "visible";
-        card.style.pointerEvents = "auto";
-        card.style.zIndex = offset === 0 ? "3" : "2";
+            card.classList.remove("is-active", "is-prev", "is-next", "is-hidden");
+
+            if (Math.abs(offset) > 1) {
+              card.classList.add("is-hidden");
+              card.style.transform = "translateX(-50%) scale(0.72)";
+              card.style.opacity = "0";
+              card.style.visibility = "hidden";
+              card.style.pointerEvents = "none";
+              card.style.zIndex = "0";
+              return;
+            }
+
+            const shift = Math.min(window.innerWidth * 0.22, 250);
+            const scale = offset === 0 ? 1 : 0.86;
+            const rotate = offset === 0 ? 0 : offset < 0 ? 12 : -12;
+            const x = offset * shift;
+
+            card.classList.add(offset === 0 ? "is-active" : offset < 0 ? "is-prev" : "is-next");
+            card.style.transform = `translateX(calc(-50% + ${x}px)) scale(${scale}) rotateY(${rotate}deg)`;
+            card.style.opacity = offset === 0 ? "1" : "0.62";
+            card.style.visibility = "visible";
+            card.style.pointerEvents = "auto";
+            card.style.zIndex = offset === 0 ? "3" : "2";
+          });
+        }
+
+        function nextCard() {
+          currentIndex = (currentIndex + 1) % total;
+          updateCarousel();
+        }
+
+        function prevCard() {
+          currentIndex = (currentIndex - 1 + total) % total;
+          updateCarousel();
+        }
+
+        prevBtn.replaceWith(prevBtn.cloneNode(true));
+        nextBtn.replaceWith(nextBtn.cloneNode(true));
+        
+        const newPrevBtn = document.getElementById("carousel-prev");
+        const newNextBtn = document.getElementById("carousel-next");
+
+        newPrevBtn.addEventListener("click", prevCard);
+        newNextBtn.addEventListener("click", nextCard);
+
+        document.addEventListener("keydown", (e) => {
+          if (e.key === "ArrowRight") nextCard();
+          if (e.key === "ArrowLeft") prevCard();
+        });
+
+        let autoSlide = setInterval(nextCard, 4000);
+
+        carouselContainer.addEventListener("mouseenter", () => clearInterval(autoSlide));
+        carouselContainer.addEventListener("mouseleave", () => {
+          clearInterval(autoSlide);
+          autoSlide = setInterval(nextCard, 4000);
+        });
+
+        window.addEventListener("resize", updateCarousel);
+
+        updateCarousel();
+
+        // Bind dynamic links to custom cursor hover class
+        const dynamicHoverables = carouselContainer.querySelectorAll(".carousel-btn");
+        dynamicHoverables.forEach((el) => {
+          el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
+          el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
+        });
+      })
+      .catch(error => {
+        console.error("Error loading projects content:", error);
       });
-    }
-
-    function nextCard() {
-      currentIndex = (currentIndex + 1) % total;
-      updateCarousel();
-    }
-
-    function prevCard() {
-      currentIndex = (currentIndex - 1 + total) % total;
-      updateCarousel();
-    }
-
-    nextBtn.addEventListener("click", nextCard);
-    prevBtn.addEventListener("click", prevCard);
-
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "ArrowRight") nextCard();
-      if (e.key === "ArrowLeft") prevCard();
-    });
-
-    let autoSlide = setInterval(nextCard, 4000);
-
-    carouselContainer.addEventListener("mouseenter", () => clearInterval(autoSlide));
-    carouselContainer.addEventListener("mouseleave", () => {
-      clearInterval(autoSlide);
-      autoSlide = setInterval(nextCard, 4000);
-    });
-
-    window.addEventListener("resize", updateCarousel);
-
-    updateCarousel();
   });
 
 
